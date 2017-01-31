@@ -7,8 +7,9 @@ html, body, .screen {
 	width: 100%;	
 }
 .firstScreen {
-	
+	background-image: url("img/firstscreenbackground.jpg");
 }
 .secondScreen {
 	display: none;
+	background-image: url("img/secondscreenbackground.jpg");
 }
