@@ -1,0 +1,4 @@
+git remote add origin https://github.com/tachnik/Tcspel.git
+git commit -m "meddelande"
+git push -u origin master
+git pull origin master
