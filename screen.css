@@ -7,10 +7,6 @@ html, body, .screen {
 	height: 100%;
 	width: 100%;
 }
-@font-face {
-	font-family: 'Titillium Web', sans-serif;
-	src: url('Pacifico-Regular.ttf');
-} 
 .firstScreen {
 	background-image: url("img/firstscreenbackground.jpg");
 	display: flex;
@@ -28,10 +24,11 @@ html, body, .screen {
 	height: auto;
 }
 .knappDiv {
-   display: flex;
-   flex-grow: 1;
-   justify-content: center;
-   flex-direction: column;
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
 }
 .startbutton {
 	background-color: #29568f;
@@ -40,4 +37,6 @@ html, body, .screen {
 	display: inline-block;
 	border-radius: 5px;
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+	text-align: center;
+	margin: 0 10%;
 }
