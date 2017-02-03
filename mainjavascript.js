@@ -10,3 +10,7 @@ function switchWindow(screen) {
 $(".firstScreen h2").on("click", function() {
 	switchWindow("second");
 });
+
+//börja med fråga objekten
+
+//gör så att de laddas in i "frågelådan"
