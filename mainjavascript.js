@@ -2,7 +2,7 @@ function switchWindow(screen) {
 	if(screen == "first") {
 		$(".secondScreen").css("display", 'none');
 		$(".firstScreen").css("display", '');
-	} else {
+	} else if (screen == "second"){
 		$(".firstScreen").css("display", 'none');
 		$(".secondScreen").css("display", 'flex');
 	}
