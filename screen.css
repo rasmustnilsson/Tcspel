@@ -18,25 +18,37 @@ html, body, .screen {
 .secondScreen {
 	display: none;
 	background-image: url("img/secondscreenbackground.png");
+	flex-direction: column;
+	justify-content: flex-end;
 }
 .firstScreen img {
+	margin-bottom: 2%;
 	width: 100px;
 	height: auto;
 }
-.knappDiv {
-	display: flex;
-	flex-grow: 1;
-	justify-content: center;
-	flex-direction: column;
-	width: 100%;
+.firstScreen h1 {
+	display: inline;
 }
 .startbutton {
 	background-color: #29568f;
 	color: white;
-	padding: 10px 15px;
+	padding: 10px 100px;
 	display: inline-block;
 	border-radius: 5px;
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
 	text-align: center;
-	margin: 0 10%;
+	margin: 20% 10%;
+}
+.questionDiv ul {
+	background-color: #fff;
+	margin: 3em 1em;
+	list-style: none;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.questionDiv ul li {
+	padding: 1em;
+	border-bottom: solid 1px black;
+}
+.questionDiv ul li:last-of-type {
+	border: none;
 }
