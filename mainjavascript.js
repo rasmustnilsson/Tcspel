@@ -23,16 +23,34 @@ function questionGenerator(list) { // tar en lista med frågan först, sen svar
 	}
 }
 
-questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still", "Vet inte"]);
-questions.question2 = new questionGenerator(["Vilket håll åker inte bussen?", "Höger", "Vänster", "Står still", "Vet inte"]);
+questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "1", "Vänster", "Står still", "Vet inte"]);
+questions.question2 = new questionGenerator(["Vilket håll åker inte bussen?"]);
+questions.question3 = new questionGenerator(["Vilket håll åker inte?", "Vet inte"]);
+questions.question4 = new questionGenerator(["Vilket håll bussen?", "4", "Vet inte"]);
+
+var questionsToUse = Object.keys(questions);
+
+function newQuestion() {
+	var newRandomIndex = Math.floor(Math.random()*Object.keys(questionsToUse).length); //ger ett random index från objekt arrayen
+	if(Object.keys(questionsToUse).length <= 0) { //Gör så att funktionen börjar om, kommer tas bort
+		questionsToUse = Object.keys(questions);
+	}
+	var selectedQuestion = questionsToUse[newRandomIndex];
+	questionsToUse.splice(newRandomIndex, 1); //tar bort alternativet som man har fått
+	return selectedQuestion;
+}
+
 
 function importNewQuestion() {
-	var questionLength = Object.keys(questions.question1).length; //ger längden på objektet med frågorna i
-	$(".secondScreen div div p").text(questions.question1.question); //uppdaterar frågan
+	var selectedQuestion = questions[newQuestion()];
+	console.log(selectedQuestion);
+	$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
+	var questionLength = Object.keys(selectedQuestion).length; //ger längden på objektet med frågorna i
+	$(".secondScreen div div p").text(selectedQuestion.question); //uppdaterar frågan
 	for(i = 1; i < questionLength; i++) {
 		var li = ".questionDiv ul li:nth-of-type(" + i + ")";
 		$(".questionDiv ul").append("<li></li>"); //lägger till en li
-		$(li).text(questions.question1["answer" + (i - 1)]); //ger li:n text från korrekt fråga
+		$(li).text(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
 		$(li).on("click",function() { //onclick style
 			var thisIndex = $(this).index(); - 1;
 			$(".questionDiv ul li").removeClass("selected border");
