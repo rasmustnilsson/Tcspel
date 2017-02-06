@@ -31,8 +31,8 @@ function importNewQuestion() {
 	$(".secondScreen div div p").text(questions.question1.question); //uppdaterar frågan
 	for(i = 1; i < questionLength; i++) {
 		var li = ".questionDiv ul li:nth-of-type(" + i + ")";
-		$(".questionDiv ul").append("<li><span></span></li>"); //lägger till en li
-		$(li + " span").text(questions.question1["answer" + (i - 1)]); //ger li:n text från korrekt fråga
+		$(".questionDiv ul").append("<li></li>"); //lägger till en li
+		$(li).text(questions.question1["answer" + (i - 1)]); //ger li:n text från korrekt fråga
 		$(li).on("click",function() { //onclick style
 			var thisIndex = $(this).index(); - 1;
 			$(".questionDiv ul li").removeClass("selected border");
