@@ -22,27 +22,42 @@ html, body, .screen {
 .secondScreen {
 	display: none;
 	background-image: url("img/secondscreenbackground.png");
+}
+.secondScreen > div:first-of-type {
+	height: 100%;
+	width: 100%;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
-.secondScreen > div:first-of-type {
+.secondScreen > div > div:first-of-type {
 	display: flex;
     flex-direction: column;
     align-items: center;
-	margin-top: 48px;
+	margin-top: 32px;
 	flex-grow: 1;
 }
-
-.secondScreen > div:first-of-type > div {
-	display: flex;
+.secondScreen > div > div > div:last-child {
 	flex-grow: 1;
+	display: flex;
 	justify-content: center;
 	flex-direction: column;
 }
-.secondScreen div:first-of-type img {
-	height: 200px;
-	width: calc(100% - 32px);
+.secondScreen .questionDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.secondScreen .imagecontainer {
+	min-height: 200px;
+	width: calc(100% - 34px);
 	border: 1px solid black;
+	flex-grow: 1;
+	max-width: 800px;
+	overflow: hidden;
+	background-image: url(img/DSC_9657.JPG);
+	background-position: center 25%;
+	background-repeat: no-repeat;
 }
 .firstScreen div:first-of-type {
 	height: calc(100% - 116px);
@@ -72,12 +87,14 @@ html, body, .screen {
 }
 .questionDiv ul {
 	background-color: #fff;
-	margin: 0 1em 3em 1em;
+	margin: 0 16px 32px 16px;
 	list-style: none;
 	min-height: 200px;
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	display: flex;
 	flex-direction: column;
+	max-width: 800px;
+	width: calc(100% - 32px);
 }
 .questionDiv ul li {
 	flex-grow: 1;
