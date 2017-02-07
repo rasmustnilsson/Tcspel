@@ -56,7 +56,7 @@ html, body, .screen {
 	max-width: 800px;
 	overflow: hidden;
 	background-image: url(img/Teknikcollege.png);
-	background-position: center 25%;
+	background-position: center;
 	background-repeat: no-repeat;
 }
 .firstScreen div:first-of-type {
