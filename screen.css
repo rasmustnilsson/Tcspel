@@ -1,15 +1,100 @@
+/* @font-face { 
+	font-family: ;
+	src: url(fonts/);
+} */
 * {
 	margin: 0;
 	padding: 0;
+	font-family: sans-serif;
 }
 html, body, .screen {
 	height: 100%;
-	width: 100%;	
+	width: 100%;
 }
 .firstScreen {
 	background-image: url("img/firstscreenbackground.jpg");
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: flex-end;
+	background-size: cover;
 }
 .secondScreen {
 	display: none;
-	background-image: url("img/secondscreenbackground.jpg");
+	background-image: url("img/secondscreenbackground.png");
+	flex-direction: column;
+	justify-content: space-between;
+}
+.secondScreen > div:first-of-type {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	margin-top: 48px;
+	flex-grow: 1;
+}
+
+.secondScreen > div:first-of-type > div {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	flex-direction: column;
+}
+.secondScreen div:first-of-type img {
+	height: 200px;
+	width: calc(100% - 32px);
+	border: 1px solid black;
+}
+.firstScreen div:first-of-type {
+	height: calc(100% - 116px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.firstScreen div:first-of-type span {
+	font-size: 1.5em;
+	font-weight: bold;
+	max-width: 300px;
+	align-self: center;
+}
+.firstScreen img {
+	margin-bottom: 16px;
+	width: 100px;
+	height: auto;
+}
+.startbutton {
+	background-color: #29568f;
+	color: white;
+	padding: 10px 100px;
+	display: inline-block;
+	border-radius: 5px;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+	text-align: center;
+}
+.questionDiv ul {
+	background-color: #fff;
+	margin: 0 1em 3em 1em;
+	list-style: none;
+	min-height: 200px;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	display: flex;
+	flex-direction: column;
+}
+.questionDiv ul li {
+	flex-grow: 1;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: solid 1px rgba(0, 0, 0, 0.66);;
+}
+.questionDiv ul li:last-of-type {
+	border: none;
+}
+.secondScreen .questionDiv .selected {
+	background-color: rgb(41, 86, 143);
+	color: white;
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+	border-color: transparent;
+}
+.secondScreen .questionDiv .border {
+	border-color: transparent;
 }
