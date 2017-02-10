@@ -12,7 +12,7 @@ html, body, .screen {
 	width: 100%;
 }
 .firstScreen {
-	background-image: url("img/firstscreenbackground.jpg");
+	/* background-image: url("img/firstscreenbackground.jpg"); */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -21,7 +21,7 @@ html, body, .screen {
 }
 .secondScreen {
 	display: none;
-	background-image: url("img/secondscreenbackground.png");
+	/* background-image: url("img/secondscreenbackground.png"); */
 }
 .secondScreen > div:first-of-type {
 	height: 100%;
