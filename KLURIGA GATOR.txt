@@ -17,7 +17,8 @@ Svar: väst, ost, ingenstans
 Vilken sträck är längst?
 Svar: båda, häger, vänster
 
-
+Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ...... dagar?
+Svar: 4 dagar
 
 
 
