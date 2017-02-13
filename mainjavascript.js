@@ -58,7 +58,7 @@ function importNewQuestion() {
 				if(!clicked) {
 					clicked = true;
 					var indexAbove = $(this).index(); - 1; //li:n ovanför
-					if(selectedQuestion[Object.keys(selectedQuestion)[Object.keys(selectedQuestion).length - 1]] == indexAbove + 1) {
+					if(selectedQuestion[Object.keys(selectedQuestion)[Object.keys(selectedQuestion).length - 1]] == indexAbove + 1) {  //hämtar "correctvärdet" i selectedQuestion vilket är det sista och jämför med den man klicka på.s index
 						score += 1;
 						console.log("correct", score);
 					}
