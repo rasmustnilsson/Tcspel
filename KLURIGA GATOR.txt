@@ -11,7 +11,7 @@ Vilket håll åker bussen?
 Svar: vänster, höger, stårstilla
 
 två sitter i en kanot, en paddlar åt väst och den andra åt ost.
-vilket håll kom dem åt?
+vilket håll åkte dem?
 Svar: väst, ost, ingenstans
 
 Vilken sträck är längst?
@@ -20,7 +20,8 @@ Svar: båda, häger, vänster
 Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ...... dagar?
 Svar: 4 dagar
 
-
+vilket/vilka av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?
+Svar: D
 
 
 
