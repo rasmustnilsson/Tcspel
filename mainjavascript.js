@@ -13,6 +13,9 @@ function switchWindow(screen) {
 $(".firstScreen h2").on("click", function() {
 	switchWindow("second");
 });
+$(".return").on("click", function(){
+	switchWindow("first");
+});
 
 var questions = {}
 var i = 1;
