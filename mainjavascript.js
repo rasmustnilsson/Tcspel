@@ -5,10 +5,16 @@ function switchWindow(screen) {
 	} else if (screen == "second"){
 		$("body > div").css("display", 'none');
 		$(".secondScreen").css("display", 'flex');
+	} else if (screen == "result"){
+		$("body > div").css("display", 'none');
+		$(".resultScreen").css("display", 'flex');
 	}
 }
 $(".firstScreen h2").on("click", function() {
 	switchWindow("second");
+});
+$(".return").on("click", function(){
+	switchWindow("first");
 });
 
 var questions = {}
@@ -75,8 +81,7 @@ function importNewQuestion() {
 			});
 		}
 	} else {
-		$(".questionDiv ul").empty();
-		$(".questionDiv ul").append("<li> Your score is " + score + "</li>");
+		switchWindow("result");
 		console.log("done");
 	}
 }

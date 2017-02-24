@@ -84,6 +84,12 @@ html, body, .screen {
 	width: 100px;
 	height: auto;
 }
+.resultScreen {
+	display: none;
+	flex-direction: column;
+    text-align: center;
+	justify-content: space-around;
+}
 .firstScreenButton {
 	background-color: #29568f;
 	min-width: 300px;
