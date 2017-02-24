@@ -76,6 +76,12 @@ html, body, .screen {
 	width: 100px;
 	height: auto;
 }
+.resultScreen {
+	display: none;
+	flex-direction: column;
+    text-align: center;
+	justify-content: space-around;
+}
 .startbutton {
 	background-color: #29568f;
 	color: white;

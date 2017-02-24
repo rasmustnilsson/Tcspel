@@ -5,6 +5,9 @@ function switchWindow(screen) {
 	} else if (screen == "second"){
 		$("body > div").css("display", 'none');
 		$(".secondScreen").css("display", 'flex');
+	} else if (screen == "result"){
+		$("body > div").css("display", 'none');
+		$(".resultScreen").css("display", 'flex');
 	}
 }
 $(".firstScreen h2").on("click", function() {
@@ -26,20 +29,14 @@ function questionGenerator(list) { // tar en lista med frågan först, sen svar,
 }
 
 // Första är en fråga, och sista är rättsvarsindex, och dem i mitten är frågor
-<<<<<<< HEAD
+
 questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still", 2]);
 questions.question2 = new questionGenerator(["Det finns 10 fiskar i ett akvarium. 2 av dem sjönk. 3 av dem simmade iväg. 2 av dem dog. Hur många finns kvar?", "8", "10", "3", "5", 2]);
 questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "ingenstans", "väst", "ost", 1]);
 questions.question4 = new questionGenerator(["Vilken sträck är längst?", "höger", "vänster", "båda", 3]);
 questions.question4 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar", 2]);
 questions.question4 = new questionGenerator(["vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C", 3]);
-=======
-questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still", "Vet inte", 1]);
-questions.question2 = new questionGenerator(["Vilket håll åker inte bussen?", "vet inte", "kanske", 2]);
-questions.question3 = new questionGenerator(["Vilket håll åker inte?", "Vet inte", "Höger", 2]);
-questions.question4 = new questionGenerator(["Vilket håll bussen?", "4", "Vet inte", "hur?", 1]);
->>>>>>> a67c5d1f1227c46730b614117c57761174142fac
-1
+
 var questionsToUse = Object.keys(questions);
 var clicked = false;
 
@@ -82,8 +79,7 @@ function importNewQuestion() {
 			});
 		}
 	} else {
-		$(".questionDiv ul").empty();
-		$(".questionDiv ul").append("<li> Your score is " + score + "</li>");
+		switchWindow("result");
 		console.log("done");
 	}
 }
