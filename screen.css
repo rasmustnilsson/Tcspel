@@ -56,7 +56,6 @@ html, body, .screen {
 	flex-grow: 1;
 	max-width: 800px;
 	overflow: hidden;
-	background-image: url(img/Teknikcollege.png);
 	background-position: center;
 	background-repeat: no-repeat;
 }
