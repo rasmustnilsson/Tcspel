@@ -17,6 +17,7 @@ function switchWindow(screen) {
 
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
+	centerQuestion();
 });
 $(".return").on("click", function(){
 	switchWindow("first");
@@ -84,6 +85,7 @@ function importNewQuestion() {
 					$(".questionDiv ul li:nth-of-type(" + indexAbove + ")").addClass("border");
 					var newQuestionTimer = setTimeout(function() {
 						importNewQuestion();
+						centerQuestion();
 						clicked = false;
 					}, 500);
 				}
@@ -100,11 +102,9 @@ function centerQuestion() { //för att centrera frågan om den inte är större 
 	var checkSpanWidth = $(".question").width();
 	var checkSpanHeigth = $(".question").height();
 	var windowWidth = $(".secondScreen > div > div > div:last-child").width();
-	if((checkSpanWidth < windowWidth) && (checkSpanHeigth > 17)) { //om bredd mindre och inte mer än en rad, ÄNDRAS FONT-SIZE MÅSTE PIXLARNA HÄR ÄNDRAS
-		$(".question").css("text-align", "center");
-		console.log("center");
+	if((checkSpanWidth < windowWidth) && (checkSpanHeigth <= 17)) { //om bredd mindre och inte mer än en rad, ÄNDRAS FONT-SIZE MÅSTE PIXLARNA HÄR ÄNDRAS
+		$(".questionP").css("text-align", "center");
 	} else {
-		$(".question").css("text-align", "left");
-		console.log("left");
+		$(".questionP").css("text-align", "left");
 	}
 }
