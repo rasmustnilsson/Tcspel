@@ -5,16 +5,24 @@ function switchWindow(screen) {
 	} else if (screen == "second"){
 		$("body > div").css("display", 'none');
 		$(".secondScreen").css("display", 'flex');
-	} else if (screen == "result"){
+	} else if (screen == "result") {
 		$("body > div").css("display", 'none');
 		$(".resultScreen").css("display", 'flex');
 	}
+	else if (screen == "scoreBoard") {
+		$("body > div").css("display", 'none');
+		$(".scoreBoard").css("display", 'flex');
+	}
 }
-$(".firstScreen h2").on("click", function() {
+
+$(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 });
 $(".return").on("click", function(){
 	switchWindow("first");
+});
+$(".firstScreen h2:nth-of-type(2)").on("click", function() {
+	switchWindow("scoreBoard");
 });
 
 var questions = {}
@@ -24,20 +32,21 @@ var score = 0;
 
 function questionGenerator(list) { // tar en lista med frågan först, sen svar, constructor
 	this.question = list[0]; // sätter frågan först i objektet
-	for (i = 1; i < list.length - 1; i++) { // ger varje svar ett namn och sitt svar
+	for (i = 1; i < list.length - 2; i++) { // ger varje svar ett namn och sitt svar
 		var name = "answer" + (i - 1);
 		this[name] = list[i];
 	}
 	this.correct = list[list.length - 1];
+	this.img = list[list.length - 2];
 }
 
 // Första är en fråga, och sista är rättsvarsindex, och dem i mitten är frågor
-questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still", 2]);
-questions.question2 = new questionGenerator(["Det finns 10 fiskar i ett akvarium. 2 av dem sjönk. 3 av dem simmade iväg. 2 av dem dog. Hur många finns kvar?", "8", "10", "3", "5", 2]);
-questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "ingenstans", "väst", "ost", 1]);
-questions.question4 = new questionGenerator(["Vilken sträck är längst?", "höger", "vänster", "båda", 3]);
-questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar", 2]);
-questions.question6 = new questionGenerator(["vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C", 3]);
+questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still","buss.jpg", 2]);
+questions.question2 = new questionGenerator(["Det finns 10 fiskar i ett akvarium. 2 av dem sjönk. 3 av dem simmade iväg. 2 av dem dog. Hur många finns kvar?", "8", "10", "3", "5","gotor", 2]);
+questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "ingenstans", "väst", "ost","gotor", 1]);
+questions.question4 = new questionGenerator(["Vilket sträck är längst?", "höger", "vänster", "båda","strack.png", 3]);
+questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar","gotor", 2]);
+questions.question6 = new questionGenerator(["vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C","gotor", 3]);
 
 var questionsToUse = Object.keys(questions);
 var clicked = false;
@@ -51,13 +60,13 @@ function newQuestion() {
 	}
 }
 
-
 function importNewQuestion() {
 	if(Object.keys(questionsToUse).length > 0) {
 	var selectedQuestion = questions[newQuestion()];
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
-		var questionLength = Object.keys(selectedQuestion).length - 1; //ger längden på objektet med frågorna i
+		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
 		$(".secondScreen div div p").text(selectedQuestion.question); //uppdaterar frågan
+		$(".secondScreen .imagecontainer").css("background-image", 'url("img/' + selectedQuestion.img + '")');
 		for(i = 1; i < questionLength; i++) {
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
 			$(".questionDiv ul").append("<li></li>"); //lägger till en li
