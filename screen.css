@@ -12,7 +12,7 @@ html, body, .screen {
 	width: 100%;
 }
 .firstScreen {
-	/* background-image: url("img/firstscreenbackground.jpg"); */
+	background-image: url("img/backgroundimg.png");
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -59,12 +59,20 @@ html, body, .screen {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.firstScreen div:first-of-type {
+.firstScreen > div {
 	height: calc(100% - 116px);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+    margin-top: 100px;
 }
+
+.firstScreen > div div {
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .firstScreen div:first-of-type span {
 	font-size: 1.5em;
 	font-weight: bold;
@@ -76,14 +84,20 @@ html, body, .screen {
 	width: 100px;
 	height: auto;
 }
-.startbutton {
+.firstScreenButton {
 	background-color: #29568f;
+	min-width: 300px;
 	color: white;
-	padding: 10px 100px;
+	padding: 10px 0;
+	margin: 0 0 10px 0;
 	display: inline-block;
 	border-radius: 5px;
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
 	text-align: center;
+}
+
+.firstScreenButton:last-of-type {
+	margin: 0;
 }
 .questionDiv ul {
 	background-color: #fff;
