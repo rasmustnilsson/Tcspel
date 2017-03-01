@@ -14,6 +14,7 @@ function switchWindow(screen) { // funktion för att byta skärm (fade)
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 	centerQuestion();
+	importNewQuestion();
 });
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
 	switchWindow("first");
@@ -51,7 +52,6 @@ questions.question4 = new questionGenerator(["Vilket sträck är längst?", "Öv
 questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar","Teknikcollege.png", 2]);
 questions.question6 = new questionGenerator(["Vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C","Teknikcollege.png", 3]);
 questions.question7 = new questionGenerator(["Om du går 1km söderut, 1km västerut, 1km norrut och kommer tillbaka till samma ställe var är du då?","Nordpolen", "Ekvatorn", "Kräftans vändkrets","Teknikcollege.png", 1]);
-
 var questionsToUse = Object.keys(questions);
 var clicked = false;
 
@@ -79,9 +79,9 @@ function importNewQuestion() {
 				if(!clicked) {
 					clicked = true;
 					var indexAbove = $(this).index(); - 1; //li:n ovanför
-					if(selectedQuestion[Object.keys(selectedQuestion)[Object.keys(selectedQuestion).length - 1]] == indexAbove + 1) {  //hämtar "correctvärdet" i selectedQuestion vilket är det sista och jämför med den man klicka på.s index
+					if($(this).index() + 1 == selectedQuestion.correct) { //kollar om svaret är rätt och ökar score med 1 ifall det stämmer
+						console.log("correct");
 						score += 1;
-						console.log("correct", score);
 					}
 					$(".questionDiv ul li").removeClass("selected border");
 					$(this).addClass("selected");
@@ -96,11 +96,12 @@ function importNewQuestion() {
 		}
 	} else {
 		switchWindow("result");
-		console.log("done");
+		console.log("done", score);
+		questionsToUse = Object.keys(questions);
+		$(".questionDiv ul").empty();
+		score = 0;
 	}
 }
-importNewQuestion();
-
 function centerQuestion() { //för att centrera frågan om den inte är större eller lika med bredden av sin parent
 	var checkSpanWidth = $(".question").width();
 	var checkSpanHeigth = $(".question").height();
