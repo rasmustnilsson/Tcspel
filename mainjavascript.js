@@ -10,6 +10,7 @@ function switchWindow(screen) { // funktion för att byta skärm (fade)
 		$(".scoreBoard").css("display", 'flex').animate({opacity: "1"});
 	}
 }
+
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 	centerQuestion();
@@ -49,7 +50,7 @@ questions.question3 = new questionGenerator(["Två personer sitter i en kanot, e
 questions.question4 = new questionGenerator(["Vilket sträck är längst?", "Övre", "Undre", "De är lika långa","strack.png", 3]);
 questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar","Teknikcollege.png", 2]);
 questions.question6 = new questionGenerator(["Vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C","Teknikcollege.png", 3]);
-questions.question6 = new questionGenerator(["Om du går 1km söderut, 1km västerut, 1km norrut och kommer tillbaka till samma ställe var är du då?","Nordpolen", "Ekvatorn", "Kräftans vändkrets","Teknikcollege.pne", 1]);
+questions.question7 = new questionGenerator(["Om du går 1km söderut, 1km västerut, 1km norrut och kommer tillbaka till samma ställe var är du då?","Nordpolen", "Ekvatorn", "Kräftans vändkrets","Teknikcollege.png", 1]);
 
 var questionsToUse = Object.keys(questions);
 var clicked = false;
