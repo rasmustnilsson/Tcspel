@@ -1,17 +1,13 @@
-function switchWindow(screen) {
+function switchWindow(screen) { // funktion för att byta skärm (fade)
+	$("body > div").css({"display": 'none', "opacity": "0"});
 	if(screen == "first") {
-		$("body > div").css("display", 'none');
-		$(".firstScreen").css("display", '');
+		$(".firstScreen").css("display", '').animate({opacity: "1"});
 	} else if (screen == "second"){
-		$("body > div").css("display", 'none');
-		$(".secondScreen").css("display", 'flex');
+		$(".secondScreen").css("display", 'flex').animate({opacity: "1"});
 	} else if (screen == "result") {
-		$("body > div").css("display", 'none');
-		$(".resultScreen").css("display", 'flex');
-	}
-	else if (screen == "scoreBoard") {
-		$("body > div").css("display", 'none');
-		$(".scoreBoard").css("display", 'flex');
+		$(".resultScreen").css("display", 'flex').animate({opacity: "1"});
+	} else if (screen == "scoreBoard") {
+		$(".scoreBoard").css("display", 'flex').animate({opacity: "1"});
 	}
 }
 
@@ -26,7 +22,7 @@ $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 	switchWindow("scoreBoard");
 });
 
-$(".firstScreenButton").hover(function(){ //ändrar utseende på knappen vid hover
+$(".firstScreenButton").hover(function(){ // ändrar utseende på knappen vid hover
 	$(this).addClass("buttonHover");
 }, function(){
 	$(this).removeClass("buttonHover");
