@@ -105,6 +105,9 @@ html, body, .screen {
 .firstScreenButton:last-of-type {
 	margin: 0;
 }
+.buttonHover {
+	background-color: #174176;
+}
 .questionDiv ul {
 	background-color: #fff;
 	margin: 0 16px 32px 16px;
