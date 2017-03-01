@@ -13,8 +13,8 @@ function switchWindow(screen) { // funktion för att byta skärm (fade)
 
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
-	centerQuestion();
 	importNewQuestion();
+	centerQuestion();
 });
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
 	switchWindow("first");
