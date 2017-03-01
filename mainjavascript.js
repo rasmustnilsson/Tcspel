@@ -19,7 +19,7 @@ $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 	centerQuestion();
 });
-$(".return").on("click", function(){
+$(".resultScreen h2:nth-of-type(1)").on("click", function(){
 	switchWindow("first");
 });
 $(".firstScreen h2:nth-of-type(2)").on("click", function() {
