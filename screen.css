@@ -135,3 +135,39 @@ html, body, .screen {
 .secondScreen .questionDiv .border {
 	border-color: transparent;
 }
+.socialMedia {
+	display: inline-flex;
+	flex-direction: column;
+}
+.socialMedia div:first-of-type {
+	background-color: #3b5998;
+	color: white;
+	display: inline-flex;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+    border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+	margin-bottom: 5px;
+}
+.socialMedia div:nth-of-type(2) {
+    background-color: #3b5998;
+    color: white;
+    display: inline-flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+.socialMedia span {
+    font-size: 16px;
+    padding: 0 10px 0 5px;
+}
+.socialMedia div img {
+	width: 40px;
+    height: auto;
+    padding-right: 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.21);
+    margin: 5px 0;
+}
