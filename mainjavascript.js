@@ -54,19 +54,21 @@ questions.question6 = new questionGenerator(["Vilket av dessa fyra hus, A, B, C 
 questions.question7 = new questionGenerator(["Om du går 1km söderut, 1km västerut, 1km norrut och kommer tillbaka till samma ställe var är du då?","Nordpolen", "Ekvatorn", "Kräftans vändkrets","Teknikcollege.png", 1]);
 questions.question8 = new questionGenerator(["Vilken av figurerna A till B avslutar serien bäst?","A", "B", "C","D", "iqfraga.png", 4]);
 var questionsToUse = Object.keys(questions);
+var questionsToUsedCounter = 1;
 var clicked = false;
 
-function newQuestion() {	
+function newQuestion() {
 	if(Object.keys(questionsToUse).length > 0) { //Gör så att funktionen börjar om, kommer tas bort
 		var newRandomIndex = Math.floor(Math.random()*Object.keys(questionsToUse).length); //ger ett random index från objekt arrayen
 		var selectedQuestion = questionsToUse[newRandomIndex];
 		questionsToUse.splice(newRandomIndex, 1); //tar bort alternativet som man har fått
+		questionsToUsedCounter += 1;
 		return selectedQuestion;
 	}
 }
 
 function importNewQuestion() {
-	if(Object.keys(questionsToUse).length > 0) {
+	if(Object.keys(questionsToUse).length > 0 && questionsToUsedCounter <= 3) { //Körs så länge det finns frågor att använda och man inte har nått maxgränsen på hur många frågor man vill ska komma
 	var selectedQuestion = questions[newQuestion()];
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
@@ -101,6 +103,7 @@ function importNewQuestion() {
 		switchWindow("result");
 		console.log("done", score);
 		questionsToUse = Object.keys(questions);
+		questionsToUsedCounter = 1;
 		$(".questionDiv ul").empty();
 		score = 0;
 	}
