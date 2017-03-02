@@ -1,7 +1,11 @@
-/* @font-face { 
-	font-family: ;
-	src: url(fonts/);
-} */
+@font-face { 
+	font-family: Arial;
+	src: url(fonts/arial.ttf);
+}
+@font-face { 
+	font-family: Garamond;
+	src: url(fonts/garamond.ttf);
+}
 * {
 	margin: 0;
 	padding: 0;
