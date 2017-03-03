@@ -105,6 +105,9 @@ html, body, .screen {
     text-align: center;
 	justify-content: space-around;
 }
+.resultScreen h3 {
+	opacity: 0;
+}
 svg {
 	width: 100%;
 	height: 40%;

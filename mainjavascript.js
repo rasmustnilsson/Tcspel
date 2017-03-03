@@ -18,6 +18,7 @@ $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 });
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
 	switchWindow("first");
+	$(".resultScreen h3").css("opacity", "0");
 });
 $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 	switchWindow("scoreBoard");
@@ -103,6 +104,9 @@ function importNewQuestion() {
 		switchWindow("result");
 		$("#tspan4155").text(score);
 		$(".resultScreen h3").text(personalMessage[score][randomNumberBetweenZeroAnd(personalMessage[score].length - 1)]);
+		setTimeout(function(){
+			$(".resultScreen h3").animate({opacity: "1"}, 800);
+		}, 650);
 		console.log("done", score);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
