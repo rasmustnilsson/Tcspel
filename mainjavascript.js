@@ -102,6 +102,7 @@ function importNewQuestion() {
 	} else {
 		switchWindow("result");
 		$("#tspan4155").text(score);
+		$(".resultScreen h3").text(personalMessage[score][randomNumberBetweenZeroAnd(personalMessage[score].length - 1)]);
 		console.log("done", score);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
@@ -119,3 +120,21 @@ function centerQuestion() { //för att centrera frågan om den inte är större 
 		$(".questionP").css("text-align", "left");
 	}
 }
+function randomNumberBetweenZeroAnd(number){ //funktion som väljer ett slumpmässigt heltal mellan 0 och number 
+	this.value = Math.round(Math.random() * number);
+	return this.value; 
+}
+
+var personalMessage = [
+	["Teknikcollege 0/10 1", "Teknikcollege 0/10 2", "Teknikcollege 0/10 3", "Teknikcollege 0/10 4"],
+	["Teknikcollege 1/10 1", "Teknikcollege 1/10 2", "Teknikcollege 1/10 3", "Teknikcollege 1/10 4"],
+	["Teknikcollege 2/10 1", "Teknikcollege 2/10 2", "Teknikcollege 2/10 3", "Teknikcollege 2/10 4"],
+	["Teknikcollege 3/10 1", "Teknikcollege 3/10 2", "Teknikcollege 3/10 3", "Teknikcollege 3/10 4"],
+	["Teknikcollege 4/10 1", "Teknikcollege 4/10 2", "Teknikcollege 4/10 3", "Teknikcollege 4/10 4"],
+	["Teknikcollege 5/10 1", "Teknikcollege 5/10 2", "Teknikcollege 5/10 3", "Teknikcollege 5/10 4"],
+	["Teknikcollege 6/10 1", "Teknikcollege 6/10 2", "Teknikcollege 6/10 3", "Teknikcollege 6/10 4"],
+	["Teknikcollege 7/10 1", "Teknikcollege 7/10 2", "Teknikcollege 7/10 3", "Teknikcollege 7/10 4"],
+	["Teknikcollege 8/10 1", "Teknikcollege 8/10 2", "Teknikcollege 8/10 3", "Teknikcollege 8/10 4"],
+	["Teknikcollege 9/10 1", "Teknikcollege 9/10 2", "Teknikcollege 9/10 3", "Teknikcollege 9/10 4"],
+	["Teknikcollege 10/10 1", "Teknikcollege 10/10 2", "Teknikcollege 10/10 3", "Teknikcollege 10/10 4"]
+];
