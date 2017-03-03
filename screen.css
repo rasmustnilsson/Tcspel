@@ -4,12 +4,17 @@
 }
 @font-face { 
 	font-family: "Arial";
-	src: url("fonts/arialbold.ttf");
+	src: url("fonts/arial_bold.ttf");
 	font-weight: bold;
 }
 @font-face { 
 	font-family: "Garamond";
 	src: url("fonts/garamond.ttf");
+}
+@font-face { 
+	font-family: "Garamond";
+	src: url("fonts/garamond_bold.ttf");
+	font-weight: bold;
 }
 * {
 	margin: 0;
@@ -93,7 +98,6 @@ html, body, .screen {
 	font-weight: bold;
 	max-width: 300px;
 	align-self: center;
-	font-family: Garamond;
 }
 .firstScreen img {
 	margin-bottom: 16px;
@@ -120,7 +124,6 @@ svg {
 	border-radius: 5px;
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
 	text-align: center;
-	font-family: Garamond;
 }
 
 .firstScreenButton:last-of-type {
