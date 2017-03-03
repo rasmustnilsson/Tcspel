@@ -126,15 +126,15 @@ function randomNumberBetweenZeroAnd(number){ //funktion som väljer ett slumpmä
 }
 
 var personalMessage = [
-	["Teknikcollege 0/10 1", "Teknikcollege 0/10 2", "Teknikcollege 0/10 3", "Teknikcollege 0/10 4"],
-	["Teknikcollege 1/10 1", "Teknikcollege 1/10 2", "Teknikcollege 1/10 3", "Teknikcollege 1/10 4"],
-	["Teknikcollege 2/10 1", "Teknikcollege 2/10 2", "Teknikcollege 2/10 3", "Teknikcollege 2/10 4"],
-	["Teknikcollege 3/10 1", "Teknikcollege 3/10 2", "Teknikcollege 3/10 3", "Teknikcollege 3/10 4"],
-	["Teknikcollege 4/10 1", "Teknikcollege 4/10 2", "Teknikcollege 4/10 3", "Teknikcollege 4/10 4"],
-	["Teknikcollege 5/10 1", "Teknikcollege 5/10 2", "Teknikcollege 5/10 3", "Teknikcollege 5/10 4"],
-	["Teknikcollege 6/10 1", "Teknikcollege 6/10 2", "Teknikcollege 6/10 3", "Teknikcollege 6/10 4"],
-	["Teknikcollege 7/10 1", "Teknikcollege 7/10 2", "Teknikcollege 7/10 3", "Teknikcollege 7/10 4"],
-	["Teknikcollege 8/10 1", "Teknikcollege 8/10 2", "Teknikcollege 8/10 3", "Teknikcollege 8/10 4"],
-	["Teknikcollege 9/10 1", "Teknikcollege 9/10 2", "Teknikcollege 9/10 3", "Teknikcollege 9/10 4"],
-	["Teknikcollege 10/10 1", "Teknikcollege 10/10 2", "Teknikcollege 10/10 3", "Teknikcollege 10/10 4"]
+	["0/10 1", "0/10 2", "0/10 3", "0/10 4"],
+	["1/10 1", "1/10 2", "1/10 3", "1/10 4"],
+	["2/10 1", "2/10 2", "2/10 3", "2/10 4"],
+	["3/10 1", "3/10 2", "3/10 3", "3/10 4"],
+	["4/10 1", "4/10 2", "4/10 3", "4/10 4"],
+	["5/10 1", "5/10 2", "5/10 3", "5/10 4"],
+	["6/10 1", "6/10 2", "6/10 3", "6/10 4"],
+	["7/10 1", "7/10 2", "7/10 3", "7/10 4"],
+	["8/10 1", "8/10 2", "8/10 3", "8/10 4"],
+	["9/10 1", "9/10 2", "9/10 3", "9/10 4"],
+	["10/10 1", "10/10 2", "10/10 3", "10/10 4"]
 ];
