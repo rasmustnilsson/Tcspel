@@ -109,7 +109,7 @@ html, body, .screen {
     text-align: center;
 	justify-content: space-around;
 }
-.resultScreen h3 {
+.resultScreen h3, .resultScreen h2 {
 	opacity: 0;
 }
 svg {
@@ -168,6 +168,7 @@ svg {
 .socialMedia {
 	display: inline-flex;
 	flex-direction: column;
+	opacity: 0;
 }
 .socialMedia div:first-of-type {
 	background-color: #3b5998;
