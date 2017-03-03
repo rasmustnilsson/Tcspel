@@ -101,6 +101,7 @@ function importNewQuestion() {
 		}
 	} else {
 		switchWindow("result");
+		$("#tspan4155").text(score);
 		console.log("done", score);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
