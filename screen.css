@@ -66,11 +66,19 @@ html, body, .screen {
 	box-sizing: border-box;
 	font-size: 14px;
 }
+.secondScreen > div > div > div:last-child p {
+	flex-grow: 1;
+}
 .secondScreen > div > div > div:last-child h2 {
 	text-align: center;
+	color: #222222;
 	border-bottom: 1px solid #D39100;
 	margin: 0 40px 10px;
 	padding-bottom: 6px;
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
 }
 .secondScreen .questionDiv {
 	display: flex;

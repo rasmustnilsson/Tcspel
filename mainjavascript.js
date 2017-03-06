@@ -74,6 +74,7 @@ function importNewQuestion() {
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
 		$(".secondScreen div div p span").text(selectedQuestion.question).css("opacity", '0').animate({opacity: "1"}, 800); //uppdaterar frågan
+		$(".questionLine").css("opacity", '0').animate({opacity: "1"}, 800); //fadear "Fråga"
 		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).animate({opacity: "1"}, 800);
 		for(i = 1; i < questionLength; i++) {
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
@@ -91,7 +92,7 @@ function importNewQuestion() {
 					}
 					$(".questionDiv ul li").removeClass("selected border");
 					$(this).addClass("selected");
-					$(".questionDiv ul li").delay(400).fadeOut(400);
+					$(".questionDiv ul li").delay(250).fadeOut(550);
 					$(".questionDiv ul li:nth-of-type(" + indexAbove + ")").addClass("border");
 					var newQuestionTimer = setTimeout(function() {
 						importNewQuestion();
