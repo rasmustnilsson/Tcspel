@@ -48,7 +48,7 @@ function questionGenerator(list) { // tar en lista med frågan först, sen svar,
 // Första är en fråga, och sista är rättsvarsindex, och dem i mitten är frågor
 questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still","buss.jpg", 2]);
 questions.question2 = new questionGenerator(["Det finns 10 fiskar i ett akvarium. 2 av dem sjönk. 3 av dem simmade iväg. 2 av dem dog. Hur många finns kvar?", "8", "10", "3", "5","Teknikcollege.png", 2]);
-questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "ingenstans", "väst", "ost","Teknikcollege.png", 1]);
+questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "Ingenstans", "Väst", "Ost","Teknikcollege.png", 1]);
 questions.question4 = new questionGenerator(["Vilket sträck är längst?", "Övre", "Undre", "De är lika långa","strack.png", 3]);
 questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar","Teknikcollege.png", 2]);
 questions.question6 = new questionGenerator(["Vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C","Teknikcollege.png", 3]);
@@ -73,16 +73,14 @@ function importNewQuestion() {
 	var selectedQuestion = questions[newQuestion()];
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
-		$(".secondScreen div div p span").text(selectedQuestion.question); //uppdaterar frågan
-		$(".secondScreen div div p span").css("opacity", '0');
-		$(".secondScreen div div p span").animate({opacity: "1"});
-		$(".secondScreen .imagecontainer").css("background-image", 'url("img/' + selectedQuestion.img + '")');
+		$(".secondScreen div div p span").text(selectedQuestion.question).css("opacity", '0').animate({opacity: "1"}, 800); //uppdaterar frågan
+		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).animate({opacity: "1"}, 800);
 		for(i = 1; i < questionLength; i++) {
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
 			$(".questionDiv ul").append("<li></li>"); //lägger till en li
 			$(li).text(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
 			$(li).css("opacity", "0");
-			$(li).animate({opacity: "1"});
+			$(li).animate({opacity: "1"}, 700);
 			$(li).on("click",function() { //onclick style
 				if(!clicked) {
 					clicked = true;
@@ -93,6 +91,7 @@ function importNewQuestion() {
 					}
 					$(".questionDiv ul li").removeClass("selected border");
 					$(this).addClass("selected");
+					$(".questionDiv ul li").delay(400).fadeOut(400);
 					$(".questionDiv ul li:nth-of-type(" + indexAbove + ")").addClass("border");
 					var newQuestionTimer = setTimeout(function() {
 						importNewQuestion();
