@@ -34,6 +34,9 @@ html, body, .screen {
 	align-items: center;
     justify-content: flex-end;
 }
+.secondScreen {
+	background-image: url("img/backgroundimg2.png");
+}
 .secondScreen, .scoreBoard, .resultScreen {
 	display: none;
 }
@@ -56,12 +59,18 @@ html, body, .screen {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	width: calc(100% - 32px);
+	width: calc(100% - 40px);
 	max-width: 800px;
 	background-color: white;
-	padding: 0 10px;
+	padding: 0 14px;
 	box-sizing: border-box;
 	font-size: 14px;
+}
+.secondScreen > div > div > div:last-child h2 {
+	text-align: center;
+	border-bottom: 1px solid #D39100;
+	margin: 0 40px 10px;
+	padding-bottom: 6px;
 }
 .secondScreen .questionDiv {
 	display: flex;
@@ -71,7 +80,8 @@ html, body, .screen {
 .secondScreen .imagecontainer {
 	min-height: 200px;
 	width: calc(100% - 34px);
-	border: 1px solid black;
+	position: relative;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	flex-grow: 1;
 	max-width: 800px;
 	display: flex;
