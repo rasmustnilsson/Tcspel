@@ -24,12 +24,6 @@ $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 	switchWindow("scoreBoard");
 });
 
-$(".firstScreenButton").hover(function(){ // ändrar utseende på knappen vid hover
-	$(this).addClass("buttonHover");
-}, function(){
-	$(this).removeClass("buttonHover");
-});
-
 var questions = {}
 var i = 1;
 var score = 0;

@@ -155,7 +155,7 @@ svg {
 .firstScreenButton:last-of-type {
 	margin: 0;
 }
-.buttonHover {
+.firstScreenButton:hover {
 	background-color: #174176;
 }
 .questionDiv ul {
