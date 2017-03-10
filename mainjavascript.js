@@ -183,13 +183,13 @@ function addToScoreboard(score, time) { //lägger till score i scoreboard ifall 
 	for(i = 0; i <= scoreboard.length; i++) {
 		if(scoreboard.length < 10) {
 			scoreboard.push(score);
-			scoreboard.sort(function(a, b){return a-b});
+			scoreboard.sort(function(a, b){return b-a});
 			break;
 		}
-		else if(score < scoreboard[i]) {
+		else if(score > scoreboard[i]) {
 			scoreboard.pop();
 			scoreboard.push(score);
-			scoreboard.sort(function(a, b){return a-b});
+			scoreboard.sort(function(a, b){return b-a});
 			break;
 		}
 	}
