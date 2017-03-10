@@ -26,7 +26,7 @@ $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 
 var questions = {}
 var i = 1;
-var score = 0;
+var currentScore = 0;
 
 
 function questionGenerator(list) { // tar en lista med frågan först, sen svar, constructor
@@ -82,7 +82,7 @@ function importNewQuestion() {
 					var indexAbove = $(this).index(); - 1; //li:n ovanför
 					if($(this).index() + 1 == selectedQuestion.correct) { //kollar om svaret är rätt och ökar score med 1 ifall det stämmer
 						console.log("correct");
-						score += 1;
+						currentScore += 1;
 					}
 					$(".questionDiv ul li").removeClass("selected border");
 					$(this).addClass("selected");
@@ -98,8 +98,8 @@ function importNewQuestion() {
 		}
 	} else {
 		switchWindow("result");
-		$("#tspan4155").text(score);
-		$(".resultScreen h3").text(personalMessage[score][randomNumberBetweenZeroAnd(personalMessage[score].length - 1)]);
+		$("#tspan4155").text(currentScore);
+		$(".resultScreen h3").text(personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)]);
 		setTimeout(function(){
 			$(".resultScreen h3").animate({opacity: "1"}, 800);
 			setTimeout(function(){
@@ -109,11 +109,12 @@ function importNewQuestion() {
 				}, 500);
 			}, 300);	
 		}, 300);
-		console.log("done", score);
+		console.log("done", currentScore);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
 		$(".questionDiv ul").empty();
-		score = 0;
+		addToScoreboard(currentScore);
+		currentScore = 0;
 	}
 }
 function centerQuestion() { //för att centrera frågan om den inte är större eller lika med bredden av sin parent
@@ -148,9 +149,11 @@ var scoreboard;
 if(localStorage.getItem("scoreboard") === null) {
 	scoreboard = [];
 	localStorage.scoreboard = scoreboard;
-} else {
+} else if (!!localStorage.scoreboard) {
 	var scoreboard = localStorage.scoreboard;
 	scoreboard = scoreboard.split(",");
+} else {
+	scoreboard = [];
 }
 
 console.log(scoreboard);
@@ -159,24 +162,16 @@ function addToScoreboard(score, time) {
 	for(i = 0; i <= scoreboard.length; i++) {
 		if(scoreboard.length < 10) {
 			scoreboard.push(score);
-			console.log(scoreboard, "<10");
-			scoreboard.sort();
+			scoreboard.sort(function(a, b){return a-b});
 			break;
 		}
 		else if(score < scoreboard[i]) {
 			scoreboard.pop();
 			scoreboard.push(score);
-			scoreboard.sort();
-			console.log(scoreboard);
+			scoreboard.sort(function(a, b){return a-b});
 			break;
 		}
 	}
 	localStorage.scoreboard = scoreboard;
 	console.log(localStorage.scoreboard);
 }
-
-addToScoreboard(1);
-addToScoreboard(4);
-addToScoreboard(8);
-addToScoreboard(2);
-addToScoreboard(10);
