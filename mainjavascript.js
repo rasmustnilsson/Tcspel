@@ -144,3 +144,39 @@ var personalMessage = [
 	["9/10 1", "9/10 2", "9/10 3", "9/10 4"],
 	["10/10 1", "10/10 2", "10/10 3", "10/10 4"]
 ];
+var scoreboard;
+if(localStorage.getItem("scoreboard") === null) {
+	scoreboard = [];
+	localStorage.scoreboard = scoreboard;
+} else {
+	var scoreboard = localStorage.scoreboard;
+	scoreboard = scoreboard.split(",");
+}
+
+console.log(scoreboard);
+
+function addToScoreboard(score, time) {
+	for(i = 0; i <= scoreboard.length; i++) {
+		if(scoreboard.length < 10) {
+			scoreboard.push(score);
+			console.log(scoreboard, "<10");
+			scoreboard.sort();
+			break;
+		}
+		else if(score < scoreboard[i]) {
+			scoreboard.pop();
+			scoreboard.push(score);
+			scoreboard.sort();
+			console.log(scoreboard);
+			break;
+		}
+	}
+	localStorage.scoreboard = scoreboard;
+	console.log(localStorage.scoreboard);
+}
+
+addToScoreboard(1);
+addToScoreboard(4);
+addToScoreboard(8);
+addToScoreboard(2);
+addToScoreboard(10);
