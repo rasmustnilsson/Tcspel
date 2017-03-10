@@ -8,9 +8,9 @@ function switchWindow(screen) { // funktion för att byta skärm (fade)
 		$(".resultScreen").css("display", 'flex').animate({opacity: "1"});
 	} else if (screen == "scoreBoard") {
 		$(".scoreBoard").css("display", 'flex').animate({opacity: "1"});
+		generateScoreboard();
 	}
 }
-
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 	importNewQuestion();
@@ -158,7 +158,7 @@ if(localStorage.getItem("scoreboard") === null) {
 
 console.log(scoreboard);
 
-function addToScoreboard(score, time) {
+function addToScoreboard(score, time) { //lägger till score i scoreboard ifall det passar
 	for(i = 0; i <= scoreboard.length; i++) {
 		if(scoreboard.length < 10) {
 			scoreboard.push(score);
@@ -174,4 +174,16 @@ function addToScoreboard(score, time) {
 	}
 	localStorage.scoreboard = scoreboard;
 	console.log(localStorage.scoreboard);
+}
+function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
+	for(i = 1; i <= scoreboard.length; i++) {
+		$(".scoreBoard table").append("<tr><td></td><td></td><td></td></tr>");
+	}
+	for(i = 2; i <= scoreboard.length + 2; i++) {
+		console.log(i);
+		var placeScore = scoreboard[i - 2];
+		$(".scoreBoard table tr:nth-of-type(" + i + ") td:nth-of-type(1)").append(i - 1);
+		$(".scoreBoard table tr:nth-of-type(" + i + ") td:nth-of-type(2)").append(placeScore);
+		$(".scoreBoard table tr:nth-of-type(" + i + ") td:nth-of-type(3)").append("N/A");
+	}
 }
