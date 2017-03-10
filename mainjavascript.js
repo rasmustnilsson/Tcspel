@@ -15,6 +15,8 @@ $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 	importNewQuestion();
 	centerQuestion();
+	countStart = new Date().getTime() / 1000; //start
+	timer = setInterval(counter, 10);
 });
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
 	switchWindow("first");
@@ -62,6 +64,23 @@ function newQuestion() {
 	}
 }
 
+//timer
+var countStart
+var timer;
+var counter = function(){
+	var count = (new Date().getTime() / 1000) - countStart; //tidsskillnad
+	var realCount = Math.round(count * 100) / 100 //två decimaler
+	var time = realCount.toString(); //string
+	var timeDec = time.length; //längd med decimaler, note: inkluderar punkten
+	var timeInt = Math.round(realCount).toString().length; //längd utan decimaler
+	if(timeDec - timeInt == 2){
+		time = time + "0";
+	} else if(timeDec - timeInt == 0){
+		time = time + ".00";
+	}
+	console.log(time);
+}
+
 function importNewQuestion() {
 	if(Object.keys(questionsToUse).length > 0 && questionsToUsedCounter <= 3) { //Körs så länge det finns frågor att använda och man inte har nått maxgränsen på hur många frågor man vill ska komma
 	var selectedQuestion = questions[newQuestion()];
@@ -97,9 +116,11 @@ function importNewQuestion() {
 			});
 		}
 	} else {
+		clearInterval(timer); //counter stop
+		var message = personalMessage[score][randomNumberBetweenZeroAnd(personalMessage[score].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
 		$("#tspan4155").text(score);
-		$(".resultScreen h3").text(personalMessage[score][randomNumberBetweenZeroAnd(personalMessage[score].length - 1)]);
+		$(".resultScreen h3").text(message);
 		setTimeout(function(){
 			$(".resultScreen h3").animate({opacity: "1"}, 800);
 			setTimeout(function(){
@@ -142,5 +163,5 @@ var personalMessage = [
 	["7/10 1", "7/10 2", "7/10 3", "7/10 4"],
 	["8/10 1", "8/10 2", "8/10 3", "8/10 4"],
 	["9/10 1", "9/10 2", "9/10 3", "9/10 4"],
-	["10/10 1", "10/10 2", "10/10 3", "10/10 4"]
+	["Du är ett geni! Teknikcollege vill ha dig.", "Perfekt för Teknikcollege.", '"We got a badass over here."', "Grymt! Du ska gå på Teknikcollege."]
 ];
