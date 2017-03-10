@@ -28,7 +28,7 @@ $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 
 var questions = {}
 var i = 1;
-var score = 0;
+var currentScore = 0;
 
 
 function questionGenerator(list) { // tar en lista med frågan först, sen svar, constructor
@@ -101,7 +101,7 @@ function importNewQuestion() {
 					var indexAbove = $(this).index(); - 1; //li:n ovanför
 					if($(this).index() + 1 == selectedQuestion.correct) { //kollar om svaret är rätt och ökar score med 1 ifall det stämmer
 						console.log("correct");
-						score += 1;
+						currentScore += 1;
 					}
 					$(".questionDiv ul li").removeClass("selected border");
 					$(this).addClass("selected");
@@ -117,9 +117,9 @@ function importNewQuestion() {
 		}
 	} else {
 		clearInterval(timer); //counter stop
-		var message = personalMessage[score][randomNumberBetweenZeroAnd(personalMessage[score].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
+		var message = personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
-		$("#tspan4155").text(score);
+		$("#tspan4155").text(currentScore);
 		$(".resultScreen h3").text(message);
 		setTimeout(function(){
 			$(".resultScreen h3").animate({opacity: "1"}, 800);
@@ -130,11 +130,12 @@ function importNewQuestion() {
 				}, 500);
 			}, 300);	
 		}, 300);
-		console.log("done", score);
+		console.log("done", currentScore);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
 		$(".questionDiv ul").empty();
-		score = 0;
+		addToScoreboard(currentScore);
+		currentScore = 0;
 	}
 }
 function centerQuestion() { //för att centrera frågan om den inte är större eller lika med bredden av sin parent
@@ -165,3 +166,33 @@ var personalMessage = [
 	["9/10 1", "9/10 2", "9/10 3", "9/10 4"],
 	["Du är ett geni! Teknikcollege vill ha dig.", "Perfekt för Teknikcollege.", '"We got a badass over here."', "Grymt! Du ska gå på Teknikcollege."]
 ];
+var scoreboard;
+if(localStorage.getItem("scoreboard") === null) {
+	scoreboard = [];
+	localStorage.scoreboard = scoreboard;
+} else if (!!localStorage.scoreboard) {
+	var scoreboard = localStorage.scoreboard;
+	scoreboard = scoreboard.split(",");
+} else {
+	scoreboard = [];
+}
+
+console.log(scoreboard);
+
+function addToScoreboard(score, time) {
+	for(i = 0; i <= scoreboard.length; i++) {
+		if(scoreboard.length < 10) {
+			scoreboard.push(score);
+			scoreboard.sort(function(a, b){return a-b});
+			break;
+		}
+		else if(score < scoreboard[i]) {
+			scoreboard.pop();
+			scoreboard.push(score);
+			scoreboard.sort(function(a, b){return a-b});
+			break;
+		}
+	}
+	localStorage.scoreboard = scoreboard;
+	console.log(localStorage.scoreboard);
+}

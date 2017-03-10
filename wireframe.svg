@@ -1,21 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Lager_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1080 1920" style="enable-background:new 0 0 1080 1920;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Lager_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1080 1920"
+   style="enable-background:new 0 0 1080 1920;"
+   xml:space="preserve"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="wireframe.svg"><metadata
+     id="metadata39"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs37" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview35"
+     showgrid="false"
+     inkscape:snap-page="true"
+     inkscape:zoom="0.22"
+     inkscape:cx="-1493.5939"
+     inkscape:cy="1078.4117"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Lager_1" /><style
+     type="text/css"
+     id="style3">
 	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:9;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#000000;stroke-width:9;stroke-miterlimit:10;}
 	.st2{font-family:'MyriadPro-Regular';}
 	.st3{font-size:64px;}
-</style>
-<rect x="-1159" y="1023.7" class="st0" width="424.3" height="260"/>
-<text transform="matrix(1 0 0 1 -1133.1865 1203.6666)" class="st2" style="font-size:144px;">Knapp</text>
-<text transform="matrix(1 0 0 1 -1038.3334 1793.6666)"><tspan x="0" y="0" class="st2 st3" style="letter-spacing:22;">	</tspan><tspan x="36" y="0" class="st2 st3"> TC</tspan><tspan x="0" y="76.8" class="st2 st3">LOGGA</tspan></text>
-<text transform="matrix(1 0 0 1 -1158.9663 356.9998)" class="st2 st3">Utmanande text</text>
-<rect x="107.5" y="1040.3" class="st0" width="866.7" height="700"/>
-<line class="st1" x1="107.5" y1="1203.7" x2="974.2" y2="1203.7"/>
-<line class="st1" x1="105.8" y1="1375.3" x2="972.5" y2="1375.3"/>
-<line class="st1" x1="105.8" y1="1577" x2="972.5" y2="1577"/>
-<text transform="matrix(1 0 0 1 -1175.0001 -156.3332)" class="st2 st3">Bild som bakgrund</text>
-<text transform="matrix(1 0 0 1 61.6659 780.3333)"><tspan x="0" y="0" class="st2 st3">Lorem ipsum dolor sit amet, mel ut</tspan><tspan x="0" y="76.8" class="st2 st3">alia iusto omnes, cu vel verear integre</tspan></text>
+</style><rect
+     x="-1159"
+     y="1023.7"
+     class="st0"
+     width="424.3"
+     height="260"
+     id="rect5" /><text
+     transform="matrix(1 0 0 1 -1133.1865 1203.6666)"
+     class="st2"
+     style="font-size:144px;"
+     id="text7">Knapp</text>
+<text
+     transform="matrix(1 0 0 1 -1038.3334 1793.6666)"
+     id="text9"><tspan
+       x="0"
+       y="0"
+       class="st2 st3"
+       style="letter-spacing:22;"
+       id="tspan11" /><tspan
+       x="36"
+       y="0"
+       class="st2 st3"
+       id="tspan13"> TC</tspan><tspan
+       x="0"
+       y="76.8"
+       class="st2 st3"
+       id="tspan15">LOGGA</tspan></text>
+<text
+     transform="matrix(1 0 0 1 -1158.9663 356.9998)"
+     class="st2 st3"
+     id="text17">Utmanande text</text>
+<rect
+     x="107.5"
+     y="1040.3"
+     class="st0"
+     width="866.7"
+     height="700"
+     id="rect19" /><line
+     class="st1"
+     x1="107.5"
+     y1="1203.7"
+     x2="974.2"
+     y2="1203.7"
+     id="line21" /><line
+     class="st1"
+     x1="105.8"
+     y1="1375.3"
+     x2="972.5"
+     y2="1375.3"
+     id="line23" /><line
+     class="st1"
+     x1="105.8"
+     y1="1577"
+     x2="972.5"
+     y2="1577"
+     id="line25" /><text
+     transform="matrix(1 0 0 1 -1175.0001 -156.3332)"
+     class="st2 st3"
+     id="text27">Bild som bakgrund</text>
+<text
+     transform="matrix(1 0 0 1 61.6659 780.3333)"
+     id="text29"><tspan
+       x="0"
+       y="0"
+       class="st2 st3"
+       id="tspan31">Lorem ipsum dolor sit amet, mel ut</tspan><tspan
+       x="0"
+       y="76.8"
+       class="st2 st3"
+       id="tspan33">alia iusto omnes, cu vel verear integre</tspan></text>
+<rect
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3367"
+     width="1080"
+     height="1920"
+     x="-3327.4575"
+     y="24.406786" /><rect
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3367-3"
+     width="1080"
+     height="1920"
+     x="-1443.0509"
+     y="32.542381" /><rect
+     style="fill:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect4195"
+     width="858.82355"
+     height="112.25052"
+     x="-3221.6577"
+     y="563.02258" /><rect
+     style="fill:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect4195-6"
+     width="858.82355"
+     height="112.25052"
+     x="-3221.6577"
+     y="815.38074" /><rect
+     style="fill:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect4195-7"
+     width="858.82355"
+     height="112.25052"
+     x="-3221.6577"
+     y="1067.739" /><rect
+     style="fill:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect4195-3"
+     width="858.82355"
+     height="112.25052"
+     x="-3221.658"
+     y="1320.0972" /><rect
+     style="fill:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect4195-6-5"
+     width="858.82355"
+     height="112.25052"
+     x="-3221.658"
+     y="1572.4553" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="-3281.8181"
+     y="129.09091"
+     id="text4242"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4244"
+       x="-3281.8181"
+       y="129.09091"
+       style="font-size:50px">average time    Average score  Times played</tspan></text>
 </svg>
