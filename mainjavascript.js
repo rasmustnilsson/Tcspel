@@ -128,7 +128,7 @@ function importNewQuestion() {
 				setTimeout(function(){
 					$(".resultScreen h2").animate({opacity: "1"}, 800);
 				}, 500);
-			}, 300);	
+			}, 300);
 		}, 300);
 		console.log("done", currentScore);
 		questionsToUse = Object.keys(questions);
@@ -148,9 +148,9 @@ function centerQuestion() { //för att centrera frågan om den inte är större 
 		$(".questionP").css("text-align", "left");
 	}
 }
-function randomNumberBetweenZeroAnd(number){ //funktion som väljer ett slumpmässigt heltal mellan 0 och number 
+function randomNumberBetweenZeroAnd(number){ //funktion som väljer ett slumpmässigt heltal mellan 0 och number
 	this.value = Math.round(Math.random() * number);
-	return this.value; 
+	return this.value;
 }
 
 var personalMessage = [
@@ -166,33 +166,40 @@ var personalMessage = [
 	["9/10 1", "9/10 2", "9/10 3", "9/10 4"],
 	["Du är ett geni! Teknikcollege vill ha dig.", "Perfekt för Teknikcollege.", '"We got a badass over here."', "Grymt! Du ska gå på Teknikcollege."]
 ];
-var scoreboard;
 if(localStorage.getItem("scoreboard") === null) {
 	scoreboard = [];
 	localStorage.scoreboard = scoreboard;
 } else if (!!localStorage.scoreboard) {
+	var newScoreboard = [];
 	var scoreboard = localStorage.scoreboard;
 	scoreboard = scoreboard.split(",");
+	for(i = 0; i < scoreboard.length;) {
+		newScoreboard.push([scoreboard[i], scoreboard[i+1]]);
+		i += 2;
+	}
+	scoreboard = newScoreboard;
 } else {
 	scoreboard = [];
 }
 
 console.log(scoreboard);
 
-function addToScoreboard(score, time) { //lägger till score i scoreboard ifall det passar
-	for(i = 0; i <= scoreboard.length; i++) {
+function addToScoreboard(score) { //lägger till score i scoreboard ifall det passar
 		if(scoreboard.length < 10) {
-			scoreboard.push(score);
-			scoreboard.sort(function(a, b){return b-a});
-			break;
+			scoreboard.push([score, time]);
+			scoreboard.sort(function(a, b){
+				if (a[0] == b[0]) {
+					return a[1]-b[1];
+				} else {
+					return b[0]-a[0];
+				}
+			});
 		}
-		else if(score > scoreboard[i]) {
-			scoreboard.pop();
-			scoreboard.push(score);
-			scoreboard.sort(function(a, b){return b-a});
-			break;
-		}
-	}
+		// else if(score > scoreboard[i]) {
+		// 	scoreboard.pop();
+		// 	scoreboard.push([score, time]);
+		// 	scoreboard.sort(function(a, b){return b[0]-a[0]});
+		// }
 	localStorage.scoreboard = scoreboard;
 	console.log(localStorage.scoreboard);
 }
