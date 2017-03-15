@@ -65,20 +65,10 @@ function newQuestion() {
 }
 
 //timer
-var countStart
-var timer;
+var countStart, count, time;
 var counter = function(){
-	var count = (new Date().getTime() / 1000) - countStart; //tidsskillnad
-	var realCount = Math.round(count * 100) / 100 //två decimaler
-	var time = realCount.toString(); //string
-	var timeDec = time.length; //längd med decimaler, note: inkluderar punkten
-	var timeInt = Math.round(realCount).toString().length; //längd utan decimaler
-	if(timeDec - timeInt == 2){
-		time = time + "0";
-	} else if(timeDec - timeInt == 0){
-		time = time + ".00";
-	}
-	console.log(time);
+	count = (new Date().getTime() / 1000) - countStart; //tidsskillnad
+	time = count.toFixed(2);
 }
 
 function importNewQuestion() {
@@ -117,6 +107,7 @@ function importNewQuestion() {
 		}
 	} else {
 		clearInterval(timer); //counter stop
+		$(".time").text(time);
 		var message = personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
 		$("#tspan4155").text(currentScore);
