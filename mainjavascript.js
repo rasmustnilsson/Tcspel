@@ -175,7 +175,7 @@ if(localStorage.getItem("scoreboard") === null) {
 
 console.log(scoreboard);
 
-function addToScoreboard(score) { //lägger till score i scoreboard ifall det passar
+function addToScoreboard(score, time) { //lägger till score i scoreboard ifall det passar
 		if(scoreboard.length < 10) {
 			scoreboard.push([score, time]);
 			scoreboard.sort(function(a, b){
@@ -186,23 +186,26 @@ function addToScoreboard(score) { //lägger till score i scoreboard ifall det pa
 				}
 			});
 		}
-		// else if(score > scoreboard[i]) {
-		// 	scoreboard.pop();
-		// 	scoreboard.push([score, time]);
-		// 	scoreboard.sort(function(a, b){return b[0]-a[0]});
-		// }
+		else {
+			for(i = 0; i < scoreboard.length; i++) {
+				if(score >= scoreboard[i][0] && time <= scoreboard[i][1]) {
+					scoreboard.pop();
+					scoreboard.splice(i, 0, [score, time]);
+					break;
+				}
+			}
+		}
 	localStorage.scoreboard = scoreboard;
 	console.log(localStorage.scoreboard);
 }
 function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
-	for(i = 1; i <= scoreboard.length; i++) {
+	for(i = 0; i <= scoreboard.length; i++) {
 		$(".scoreBoard table").append("<tr><td></td><td></td><td></td></tr>");
 	}
-	for(i = 2; i <= scoreboard.length + 2; i++) {
-		console.log(i);
+	for(i = 2; i <= scoreboard.length + 1; i++) {
 		var placeScore = scoreboard[i - 2];
-		$(".scoreBoard table tr:nth-of-type(" + i + ") td:nth-of-type(1)").append(i - 1);
-		$(".scoreBoard table tr:nth-of-type(" + i + ") td:nth-of-type(2)").append(placeScore);
-		$(".scoreBoard table tr:nth-of-type(" + i + ") td:nth-of-type(3)").append("N/A");
+		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1)").append(i - 1);
+		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2)").append(placeScore[0]);
+		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3)").append(placeScore[1]);
 	}
-}
+};
