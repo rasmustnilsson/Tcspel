@@ -90,7 +90,6 @@ function importNewQuestion() {
 					clicked = true;
 					var indexAbove = $(this).index(); - 1; //li:n ovanför
 					if($(this).index() + 1 == selectedQuestion.correct) { //kollar om svaret är rätt och ökar score med 1 ifall det stämmer
-						console.log("correct");
 						currentScore += 1;
 					}
 					$(".questionDiv ul li").removeClass("selected border");
@@ -110,9 +109,9 @@ function importNewQuestion() {
 		$(".time").text(time);
 		var message = personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
-		$("#tspan4155").text(currentScore);
-		$(".resultScreen h3").text(message);
-		setTimeout(function(){
+		$("#tspan4155").text(currentScore); //sätter poängen i stjärnan
+		$(".resultScreen h3").text(message); //visar ett meddelande
+		setTimeout(function(){ //animerar element när man kommer till resultat
 			$(".resultScreen h3").animate({opacity: "1"}, 800);
 			setTimeout(function(){
 				$(".socialMedia").animate({opacity: "1"}, 800);
@@ -121,7 +120,6 @@ function importNewQuestion() {
 				}, 500);
 			}, 300);
 		}, 300);
-		console.log("done", currentScore);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
 		$(".questionDiv ul").empty();
@@ -157,29 +155,24 @@ var personalMessage = [
 	["9/10 1", "9/10 2", "9/10 3", "9/10 4"],
 	["Du är ett geni! Teknikcollege vill ha dig.", "Perfekt för Teknikcollege.", '"We got a badass over here."', "Grymt! Du ska gå på Teknikcollege."]
 ];
-if(localStorage.getItem("scoreboard") === null) {
+if(!localStorage.scoreboard) { // körs ifall det inte finns en scoreboard i localstorage
 	scoreboard = [];
 	localStorage.scoreboard = scoreboard;
-} else if (!!localStorage.scoreboard) {
+} else if (!!localStorage.scoreboard) { // körs ifall det finns en scoreboard i localstorage
 	var newScoreboard = [];
 	var scoreboard = localStorage.scoreboard;
 	scoreboard = scoreboard.split(",");
-	for(i = 0; i < scoreboard.length;) {
+	for(i = 0; i < scoreboard.length;) { // ger scoreboarden sitt format (en lista med listor)
 		newScoreboard.push([scoreboard[i], scoreboard[i+1]]);
 		i += 2;
 	}
 	scoreboard = newScoreboard;
-} else {
-	scoreboard = [];
 }
 
-console.log(scoreboard);
-
 function addToScoreboard(score, time) { //lägger till score i scoreboard ifall det passar
-		if(scoreboard.length < 10) {
-			console.log(time);
-			scoreboard.push([score, time]);
-			scoreboard.sort(function(a, b){
+		if(scoreboard.length < 10) { //körs om scoreboarden inte är full
+			scoreboard.push([score, time]); //lägger till ett score
+			scoreboard.sort(function(a, b){ //sorterar i storleksordning först efter poäng sedan efter tid
 				if (a[0] == b[0]) {
 					return a[1]-b[1];
 				} else {
@@ -188,35 +181,34 @@ function addToScoreboard(score, time) { //lägger till score i scoreboard ifall 
 			});
 		}
 		else {
-			for(i = 0; i < scoreboard.length; i++) {
-				if(score >= scoreboard[i][0] && time <= scoreboard[i][1]) {
+			for(i = 0; i < scoreboard.length; i++) { //kollar om det nya resultatet passar in i scoreboarden
+				if(score >= scoreboard[i][0] && time <= scoreboard[i][1]) { //om poängen är lika eller bättre och tiden är lika eller bättre
 					scoreboard.pop();
 					scoreboard.splice(i, 0, [score, time]);
 					break;
 				}
 			}
 		}
-	localStorage.scoreboard = scoreboard;
-	console.log(localStorage.scoreboard);
+	localStorage.scoreboard = scoreboard; //sparar i localstorage
 }
 function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
-	for(i = 0; i < 10; i++) {
+	for(i = 0; i < 10; i++) { //skapar 10 scoreboard platser
 		$(".scoreBoard table").append("<tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>");
 	}
 	var placeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(1) span").width();
 	var scoreWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(2) span").width();
 	var timeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(3) span").width();
-	for(i = 2; i <= scoreboard.length + 1; i++) {
+	for(i = 2; i <= scoreboard.length + 1; i++) { //ger varje plats ett resultat och en storlek så att formateringen blir bra
 		var placeScore = scoreboard[i - 2];
 		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
 		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append(placeScore[0]).css("width", scoreWidth);
 		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append(placeScore[1]).css("width", timeWidth);
 	}
-	if(scoreboard.length < 10)  {
+	if(scoreboard.length < 10)  { //fyller scoreboardtable:n med tomma resultat
 		for(i = scoreboard.length + 2; i <= 11; i++) {
 			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
-		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append("-").css("width", scoreWidth);
-		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append("-").css("width", timeWidth);
+			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append("-").css("width", scoreWidth);
+			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append("-").css("width", timeWidth);
 		}
 	}
 };
