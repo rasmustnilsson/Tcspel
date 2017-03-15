@@ -1,17 +1,17 @@
-@font-face { 
+@font-face {
 	font-family: "Arial";
 	src: url("fonts/arial.ttf");
 }
-@font-face { 
+@font-face {
 	font-family: "Arial";
 	src: url("fonts/arial_bold.ttf");
 	font-weight: bold;
 }
-@font-face { 
+@font-face {
 	font-family: "Garamond";
 	src: url("fonts/garamond.ttf");
 }
-@font-face { 
+@font-face {
 	font-family: "Garamond";
 	src: url("fonts/garamond_bold.ttf");
 	font-weight: bold;
@@ -228,4 +228,39 @@ svg {
 	padding-left: 5px;
 	border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
+}
+table {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+    border-spacing: 0px;
+}
+th, td {
+    padding: 6px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.scoreBoard table tr:nth-of-type(1) {
+    background-color: #29568f;
+    color: white;
+}
+.scoreBoard table tr:nth-of-type(2n + 3) {
+	background-color: #e8e8e8;
+	color: #333333;
+}
+tbody {
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.scoreBoard table td div {
+	display: inline-block;
+	text-align: left;
+}
+th {
+    font-size: 20px;
+}
+
+.scoreBoard table tr:nth-of-type(2n) {
+    background-color: white;
+	color: #333333;
 }
