@@ -125,7 +125,7 @@ function importNewQuestion() {
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
 		$(".questionDiv ul").empty();
-		addToScoreboard(currentScore);
+		addToScoreboard(currentScore, time);
 		currentScore = 0;
 	}
 }
@@ -177,6 +177,7 @@ console.log(scoreboard);
 
 function addToScoreboard(score, time) { //lägger till score i scoreboard ifall det passar
 		if(scoreboard.length < 10) {
+			console.log(time);
 			scoreboard.push([score, time]);
 			scoreboard.sort(function(a, b){
 				if (a[0] == b[0]) {
@@ -205,7 +206,6 @@ function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
 	var placeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(1) span").width();
 	var scoreWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(2) span").width();
 	var timeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(3) span").width();
-	console.log(placeWidth);
 	for(i = 2; i <= scoreboard.length + 1; i++) {
 		var placeScore = scoreboard[i - 2];
 		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
