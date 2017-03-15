@@ -76,7 +76,7 @@ function importNewQuestion() {
 	var selectedQuestion = questions[newQuestion()];
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
-		$(".secondScreen div div p div").text(selectedQuestion.question).css("opacity", '0').animate({opacity: "1"}, 800); //uppdaterar frågan
+		$(".secondScreen div div p span").text(selectedQuestion.question).css("opacity", '0').animate({opacity: "1"}, 800); //uppdaterar frågan
 		$(".questionLine").css("opacity", '0').animate({opacity: "1"}, 800); //fadear "Fråga"
 		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).animate({opacity: "1"}, 800);
 		for(i = 1; i < questionLength; i++) {
@@ -199,7 +199,7 @@ function addToScoreboard(score, time) { //lägger till score i scoreboard ifall 
 	console.log(localStorage.scoreboard);
 }
 function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
-	for(i = 0; i < scoreboard.length; i++) {
+	for(i = 0; i < 10; i++) {
 		$(".scoreBoard table").append("<tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>");
 	}
 	var placeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(1) span").width();
@@ -210,6 +210,13 @@ function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
 		var placeScore = scoreboard[i - 2];
 		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
 		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append(placeScore[0]).css("width", scoreWidth);
-		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append(placeScore[1]).css("width", placeWidth);
+		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append(placeScore[1]).css("width", timeWidth);
+	}
+	if(scoreboard.length < 10)  {
+		for(i = scoreboard.length + 2; i <= 11; i++) {
+			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
+		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append("-").css("width", scoreWidth);
+		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append("-").css("width", timeWidth);
+		}
 	}
 };
