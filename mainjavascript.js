@@ -212,3 +212,13 @@ function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
 		}
 	}
 };
+
+// this is the complete list of currently supported params you can pass to the plugin (all optional)
+var options = {
+  message: 'share this', // not supported on some apps (Facebook, Instagram)
+  subject: 'the subject', // fi. for email
+  files: ['img/buss.jpg', ''], // an array of filenames either locally or remotely
+  url: 'https://www.website.com/foo/#bar?a=b',
+  chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
+}
+window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);

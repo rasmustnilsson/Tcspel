@@ -236,7 +236,7 @@ table {
     border-spacing: 0px;
 }
 th, td {
-    padding: 6px;
+    padding: 8px;
     text-align: center;
     font-size: 18px;
 }
@@ -258,6 +258,7 @@ tbody {
 }
 th {
     font-size: 20px;
+	padding: 10px 0;
 }
 
 .scoreBoard table tr:nth-of-type(2n) {
