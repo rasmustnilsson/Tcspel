@@ -84,13 +84,13 @@ function importNewQuestion() {
 		for(i = 1; i < questionLength; i++) {
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
 			$(".questionDiv ul").append("<li></li>"); //lägger till en li
-			$(li).text(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
+			$(li).append(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
 			$(li).css("opacity", "0");
 			$(li).animate({opacity: "1"}, 700);
 			$(li).on("click",function() { //onclick style
 				if(!clicked) {
 					clicked = true;
-					var indexAbove = $(this).index(); - 1; //li:n ovanför
+					var indexAbove = $(this).index(); //li:n ovanför
 					if($(this).index() + 1 == selectedQuestion.correct) { //kollar om svaret är rätt och ökar score med 1 ifall det stämmer
 						currentScore += 1;
 					}

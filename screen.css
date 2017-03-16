@@ -21,6 +21,7 @@
 	padding: 0;
 	font-family: arial, sans-serif;
 	-webkit-user-select: none;
+	color: #333333;
 }
 html, body, .screen {
 	height: 100%;
@@ -61,24 +62,27 @@ html, body, .screen {
 	flex-direction: column;
 	width: calc(100% - 40px);
 	max-width: 800px;
-	background-color: white;
+	background-color: #f1f1f1;
 	padding: 0 14px;
 	box-sizing: border-box;
-	font-size: 14px;
 }
 .secondScreen > div > div > div:last-child p {
 	flex-grow: 1;
 }
+.secondScreen > div > div > div:last-child p span {
+	font-family: Garamond, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+}
 .secondScreen > div > div > div:last-child h2 {
 	text-align: center;
-	color: #222222;
 	border-bottom: 1px solid #D39100;
-	margin: 0 40px 10px;
-	padding-bottom: 6px;
+	margin: 0 40px 6px;
 	flex-grow: 1;
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
+	line-height: 32px;
 }
 .secondScreen .questionDiv {
 	display: flex;
@@ -189,7 +193,8 @@ html, body, .screen {
 	padding: 15px;
 	display: flex;
 	align-items: center;
-	border-bottom: solid 1px rgba(0, 0, 0, 0.66);;
+	border-bottom: solid 1px rgba(0, 0, 0, 0.66);
+	justify-content: space-between;
 }
 .questionDiv ul li:last-of-type {
 	border: none;
@@ -228,6 +233,7 @@ html, body, .screen {
     font-size: 16px;
 	padding: 0px 20px 0 15px;
 	flex-grow: 1;
+	color: white;
 }
 .socialMedia div img {
 	width: 40px;
