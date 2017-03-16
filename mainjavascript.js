@@ -19,8 +19,10 @@ $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	timer = setInterval(counter, 10);
 });
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
-	switchWindow("first");
-	$(".resultScreen h3, .socialMedia, .resultScreen h2").css("opacity", "0");
+	if($(".resultScreen h2").css("opacity") == "1"){
+		switchWindow("first");
+		$(".info, .socialMedia, .resultScreen h2").css("opacity", "0");
+	}
 });
 $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 	switchWindow("scoreBoard");
@@ -45,7 +47,7 @@ function questionGenerator(list) { // tar en lista med frågan först, sen svar,
 questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still","buss.jpg", 2]);
 questions.question2 = new questionGenerator(["Det finns 10 fiskar i ett akvarium. 2 av dem sjönk. 3 av dem simmade iväg. 2 av dem dog. Hur många finns kvar?", "8", "10", "3", "5","Teknikcollege.png", 2]);
 questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "Ingenstans", "Väst", "Ost","Teknikcollege.png", 1]);
-questions.question4 = new questionGenerator(["Vilket sträck är längst?", "Övre", "Undre", "De är lika långa","strack.svg", 3]);
+questions.question4 = new questionGenerator(["Vilket horisontellt sträck är längst?", "Övre", "Undre", "De är lika långa","strack.svg", 3]);
 questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar","Teknikcollege.png", 2]);
 questions.question6 = new questionGenerator(["Vilket av dessa fyra hus, A, B, C och D kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C","Teknikcollege.png", 3]);
 questions.question7 = new questionGenerator(["Om du går 1km söderut, 1km västerut, 1km norrut och kommer tillbaka till samma ställe var är du då?","Nordpolen", "Ekvatorn", "Kräftans vändkrets","Teknikcollege.png", 1]);
@@ -106,13 +108,13 @@ function importNewQuestion() {
 		}
 	} else {
 		clearInterval(timer); //counter stop
-		$(".time").text(time);
+		$(".time").text(time + " sekunder");
 		var message = personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
 		$("#tspan4155").text(currentScore); //sätter poängen i stjärnan
 		$(".resultScreen h3").text(message); //visar ett meddelande
 		setTimeout(function(){ //animerar element när man kommer till resultat
-			$(".resultScreen h3").animate({opacity: "1"}, 800);
+			$(".info").animate({opacity: "1"}, 800);
 			setTimeout(function(){
 				$(".socialMedia").animate({opacity: "1"}, 800);
 				setTimeout(function(){
