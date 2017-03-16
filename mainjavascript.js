@@ -19,8 +19,10 @@ $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	timer = setInterval(counter, 10);
 });
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
-	switchWindow("first");
-	$(".resultScreen h3, .socialMedia, .resultScreen h2").css("opacity", "0");
+	if($(".resultScreen h2").css("opacity") == "1"){
+		switchWindow("first");
+		$(".resultScreen h3, .socialMedia, .resultScreen h2").css("opacity", "0");
+	}
 });
 $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 	switchWindow("scoreBoard");
@@ -106,20 +108,23 @@ function importNewQuestion() {
 		}
 	} else {
 		clearInterval(timer); //counter stop
-		$(".time").text(time);
+		$(".time").text(time + " sekunder");
 		var message = personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
 		$("#tspan4155").text(currentScore); //sätter poängen i stjärnan
 		$(".resultScreen h3").text(message); //visar ett meddelande
-		setTimeout(function(){ //animerar element när man kommer till resultat
-			$(".resultScreen h3").animate({opacity: "1"}, 800);
-			setTimeout(function(){
-				$(".socialMedia").animate({opacity: "1"}, 800);
+		setTimeout(function(){
+			$(".time").animate({opacity: "1"}, 800);
+			setTimeout(function(){ //animerar element när man kommer till resultat
+				$(".resultScreen h3").animate({opacity: "1"}, 800);
 				setTimeout(function(){
-					$(".resultScreen h2").animate({opacity: "1"}, 800);
-				}, 500);
-			}, 300);
-		}, 300);
+					$(".socialMedia").animate({opacity: "1"}, 800);
+					setTimeout(function(){
+						$(".resultScreen h2").animate({opacity: "1"}, 800);
+					}, 500);
+				}, 300);
+			}, 200);
+		}, 200);
 		questionsToUse = Object.keys(questions);
 		questionsToUsedCounter = 1;
 		$(".questionDiv ul").empty();

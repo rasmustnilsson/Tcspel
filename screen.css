@@ -132,10 +132,25 @@ html, body, .screen {
     text-align: center;
 	justify-content: space-around;
 }
-.resultScreen h3, .resultScreen h2 {
+.resultScreen h3, .resultScreen h2, .time {
 	opacity: 0;
 }
-svg {
+.time {
+	color: #fff;
+	text-shadow: 0px 0px 5px #000, 1px 1px 0px #000;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.resultScreen h3 {
+	font-size: 2em;
+}
+.info {
+	background-color: #fff;
+    width: calc(100% - 32px);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.resultScreen > svg:first-of-type {
 	width: 100%;
 	height: 40%;
 	max-height: 389px;
