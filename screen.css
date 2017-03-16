@@ -132,7 +132,7 @@ html, body, .screen {
     text-align: center;
 	justify-content: space-around;
 }
-.resultScreen h3, .resultScreen h2, .time {
+.info, .resultScreen h2 {
 	opacity: 0;
 }
 .time {
