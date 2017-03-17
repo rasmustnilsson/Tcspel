@@ -83,7 +83,7 @@ function importNewQuestion() {
 		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).animate({opacity: "1"}, 800);
 		for(i = 1; i < questionLength; i++) {
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
-			$(".questionDiv ul").append("<li></li>"); //lägger till en li
+			$(".questionDiv ul").append("<li><span class='nummer'>" + i + "</span></li>"); //lägger till en li
 			$(li).append(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
 			$(li).css("opacity", "0");
 			$(li).animate({opacity: "1"}, 700);
@@ -96,6 +96,7 @@ function importNewQuestion() {
 					}
 					$(".questionDiv ul li").removeClass("selected border");
 					$(this).addClass("selected");
+					$(".selected span").css("border-color", "#fff");
 					$(".questionDiv ul li").delay(250).fadeOut(550);
 					$(".questionDiv ul li:nth-of-type(" + indexAbove + ")").addClass("border");
 					var newQuestionTimer = setTimeout(function() {
