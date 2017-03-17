@@ -67,16 +67,17 @@ html, body, .screen {
 }
 .secondScreen > div > div > div:last-child p {
 	flex-grow: 1;
+	padding: 0 16px;
 }
 .secondScreen > div > div > div:last-child p span {
 	font-family: Garamond, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1;
 }
 .secondScreen > div > div > div:last-child h2 {
 	text-align: center;
 	border-bottom: 1px solid #D39100;
-	margin: 0 40px 6px;
+	margin: 0 40px 8px;
 	flex-grow: 1;
 	display: flex;
 	justify-content: flex-end;
