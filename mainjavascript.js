@@ -129,16 +129,14 @@ function importNewQuestion() {
 		currentScore = 0;
 	}
 }
-function centerQuestion() { //för att centrera frågan om den inte är större eller lika med bredden av sin parent
-	var checkSpanWidth = $(".question").width();
-	var checkSpanHeigth = $(".question").height();
-	var windowWidth = $(".secondScreen > div > div > div:last-child").width();
-	if((checkSpanWidth < windowWidth) && (checkSpanHeigth <= 23)) { //om bredd mindre och inte mer än en rad, ÄNDRAS FONT-SIZE MÅSTE PIXLARNA HÄR ÄNDRAS
-		$(".questionP").css("text-align", "center");
-	} else {
-		$(".questionP").css("text-align", "left");
+
+function centerQuestion() { //centrerar frågan med hjälp av padding
+	$(".secondScreen > div > div > div:last-child p span").css("display", 'inline');
+	$(".secondScreen > div > div > div:last-child p span").css("padding" , '0');
+	var padd = "0 " + ($(".secondScreen > div > div > div:last-child p").width() - $(".secondScreen > div > div > div:last-child p span").width()) / 2 + "px";
+	$(".secondScreen > div > div > div:last-child p span").css("padding" , padd);
+	$(".secondScreen > div > div > div:last-child p span").css("display", 'block');
 	}
-}
 function randomNumberBetweenZeroAnd(number){ //funktion som väljer ett slumpmässigt heltal mellan 0 och number
 	this.value = Math.round(Math.random() * number);
 	return this.value;
