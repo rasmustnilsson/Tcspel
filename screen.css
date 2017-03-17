@@ -38,8 +38,17 @@ html, body, .screen {
 .secondScreen {
 	background-image: url("img/backgroundimg2.png");
 }
+.scoreBoard h2 {
+	margin: 32px 0;
+    background-color: #29568f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
 .secondScreen, .scoreBoard, .resultScreen {
 	display: none;
+	flex-direction: column;
 }
 .secondScreen > div:first-of-type {
 	height: 100%;
@@ -252,8 +261,10 @@ html, body, .screen {
 table {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 16px;
     border-spacing: 0px;
+}
+th span {
+	color: white;
 }
 th, td {
     padding: 8px;

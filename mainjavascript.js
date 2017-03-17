@@ -14,7 +14,6 @@ function switchWindow(screen) { // funktion för att byta skärm (fade)
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
 	importNewQuestion();
-	centerQuestion();
 	countStart = new Date().getTime() / 1000; //start
 	timer = setInterval(counter, 10);
 });
@@ -79,6 +78,7 @@ function importNewQuestion() {
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
 		$(".secondScreen div div p span").text(selectedQuestion.question).css("opacity", '0').animate({opacity: "1"}, 800); //uppdaterar frågan
+		centerQuestion();
 		$(".questionLine").css("opacity", '0').animate({opacity: "1"}, 800); //fadear "Fråga"
 		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).animate({opacity: "1"}, 800);
 		for(i = 1; i < questionLength; i++) {
@@ -100,7 +100,6 @@ function importNewQuestion() {
 					$(".questionDiv ul li:nth-of-type(" + indexAbove + ")").addClass("border");
 					var newQuestionTimer = setTimeout(function() {
 						importNewQuestion();
-						centerQuestion();
 						clicked = false;
 					}, 500);
 				}
