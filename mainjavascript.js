@@ -13,7 +13,9 @@ function switchWindow(screen) { // funktion för att byta skärm (fade)
 }
 $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 	switchWindow("second");
-	importNewQuestion();
+	setTimeout(function(){
+		importNewQuestion();
+	}, 0);
 	countStart = new Date().getTime() / 1000; //start
 	timer = setInterval(counter, 10);
 });
