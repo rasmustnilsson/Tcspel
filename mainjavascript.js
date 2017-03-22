@@ -108,7 +108,7 @@ function importNewQuestion() {
 		}
 	} else {
 		clearInterval(timer); //counter stop
-		$(".time").text(time + " sekunder");
+		$(".time span").text(time);
 		var message = personalMessage[currentScore][randomNumberBetweenZeroAnd(personalMessage[currentScore].length - 1)] //väljer ett medelande i personalMessage arrayen beroende på score
 		switchWindow("result");
 		$("#tspan4155").text(currentScore); //sätter poängen i stjärnan
