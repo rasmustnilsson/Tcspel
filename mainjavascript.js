@@ -27,6 +27,10 @@ $(".firstScreen h2:nth-of-type(2)").on("click", function() {
 	switchWindow("scoreBoard");
 });
 
+$(".scoreBoard .firstScreenButton").on("click", function() {
+	switchWindow("first");
+});
+
 var questions = {}
 var i = 1;
 var currentScore = 0;
@@ -192,24 +196,25 @@ function addToScoreboard(score, time) { //lägger till score i scoreboard ifall 
 	localStorage.scoreboard = scoreboard; //sparar i localstorage
 }
 function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
+	$(".table").empty(); //tömmer scoreBoarden
+	$(".table").append("<div><span><span>Place</span></span><span><span>Score</span></span><span><span>Time</span></span></div>");
 	for(i = 0; i < 10; i++) { //skapar 10 scoreboard platser
-		$(".scoreBoard table").append("<tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>");
-		$(".scoreBoard .table").append("<div><span><span></span></span><span><span></span></span><span><span></span></span></div>");
+		$(".table").append("<div><span><span></span></span><span><span></span></span><span><span></span></span></div>");
 	}
 	var placeWidth = $(".table div:nth-of-type(1) span:nth-of-type(1) span").width();
 	var scoreWidth = $(".table div:nth-of-type(1) span:nth-of-type(2) span").width();
 	var timeWidth = $(".table div:nth-of-type(1) span:nth-of-type(3) span").width();
 	for(i = 2; i <= scoreboard.length + 1; i++) { //ger varje plats ett resultat och en storlek så att formateringen blir bra
 		var placeScore = scoreboard[i - 2];
-		$(".scoreBoard .table div:nth-of-type("+ i +") span:nth-of-type(1) span").append(i - 1).css("width", placeWidth);
-		$(".scoreBoard .table div:nth-of-type("+ i +") span:nth-of-type(2) span").append(placeScore[0]).css("width", scoreWidth);
-		$(".scoreBoard .table div:nth-of-type("+ i +") span:nth-of-type(3) span").append(placeScore[1]).css("width", timeWidth);
+		$(".table div:nth-of-type("+ i +") span:nth-of-type(1) span").append(i - 1).css("width", placeWidth);
+		$(".table div:nth-of-type("+ i +") span:nth-of-type(2) span").append(placeScore[0]).css("width", scoreWidth);
+		$(".table div:nth-of-type("+ i +") span:nth-of-type(3) span").append(placeScore[1]).css("width", timeWidth);
 	}
 	if(scoreboard.length < 10)  { //fyller scoreboardtable:n med tomma resultat
 		for(i = scoreboard.length + 2; i <= 11; i++) {
-			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
-			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append("-").css("width", scoreWidth);
-			$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append("-").css("width", timeWidth);
+			$(".table div:nth-of-type("+ i +") span:nth-of-type(1) span").append(i - 1).css("width", placeWidth);
+			$(".table div:nth-of-type("+ i +") span:nth-of-type(2) span").append("-").css("width", scoreWidth);
+			$(".table div:nth-of-type("+ i +") span:nth-of-type(3) span").append("-").css("width", timeWidth);
 		}
 	}
 };

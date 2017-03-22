@@ -38,8 +38,28 @@ html, body, .screen {
 .secondScreen {
 	background-image: url("img/backgroundimg2.png");
 }
+.backDiv {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.backDiv div {
+	position: relative;
+}
+.backDiv div::before {
+	content: '';
+	position: absolute;
+	background-image: url("img/ic_arrow_back_white_24px.svg");
+	width: 24px;
+	height: 24px;
+	top: 50%;
+	transform: translate(0, -50%);
+	left: 24px;
+}
 .scoreBoard h2 {
-	margin: 32px 0;
+	margin: 0 0 32px 0;
     background-color: #29568f;
     color: white;
     text-align: center;
@@ -295,7 +315,7 @@ html, body, .screen {
 	font-weight: bold;
 }
 .table div {
-    padding: 8px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 18px;
 }
@@ -317,7 +337,7 @@ html, body, .screen {
 }
 .table div:first-of-type {
     font-size: 20px;
-	padding: 10px 0;
+	padding: 12px 0;
 }
 
 .scoreBoard .table div:nth-of-type(2n) {
