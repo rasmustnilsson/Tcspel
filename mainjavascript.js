@@ -194,15 +194,16 @@ function addToScoreboard(score, time) { //lägger till score i scoreboard ifall 
 function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
 	for(i = 0; i < 10; i++) { //skapar 10 scoreboard platser
 		$(".scoreBoard table").append("<tr><td><div></div></td><td><div></div></td><td><div></div></td></tr>");
+		$(".scoreBoard .table").append("<div><span><span></span></span><span><span></span></span><span><span></span></span></div>");
 	}
-	var placeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(1) span").width();
-	var scoreWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(2) span").width();
-	var timeWidth = $(".scoreBoard table tr:nth-of-type(1) th:nth-of-type(3) span").width();
+	var placeWidth = $(".table div:nth-of-type(1) span:nth-of-type(1) span").width();
+	var scoreWidth = $(".table div:nth-of-type(1) span:nth-of-type(2) span").width();
+	var timeWidth = $(".table div:nth-of-type(1) span:nth-of-type(3) span").width();
 	for(i = 2; i <= scoreboard.length + 1; i++) { //ger varje plats ett resultat och en storlek så att formateringen blir bra
 		var placeScore = scoreboard[i - 2];
-		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(1) div").append(i - 1).css("width", placeWidth);
-		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(2) div").append(placeScore[0]).css("width", scoreWidth);
-		$(".scoreBoard table tr:nth-of-type("+ i +") td:nth-of-type(3) div").append(placeScore[1]).css("width", timeWidth);
+		$(".scoreBoard .table div:nth-of-type("+ i +") span:nth-of-type(1) span").append(i - 1).css("width", placeWidth);
+		$(".scoreBoard .table div:nth-of-type("+ i +") span:nth-of-type(2) span").append(placeScore[0]).css("width", scoreWidth);
+		$(".scoreBoard .table div:nth-of-type("+ i +") span:nth-of-type(3) span").append(placeScore[1]).css("width", timeWidth);
 	}
 	if(scoreboard.length < 10)  { //fyller scoreboardtable:n med tomma resultat
 		for(i = scoreboard.length + 2; i <= 11; i++) {
