@@ -234,9 +234,14 @@ var options = {
   url: 'https://www.website.com/foo/#bar?a=b',
   chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
 }
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+function onDeviceReady() {
+	document.addEventListener("backbutton", onBackKeyDown, false);
+}
 window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 
-document.addEventListener("backbutton", onBackKeyDown, false);
 function onBackKeyDown() {
 	if($(".firstScreen").css("display") != "flex") {
 		switchWindow("first");
