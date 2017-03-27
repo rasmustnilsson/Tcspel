@@ -235,3 +235,12 @@ var options = {
   chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
 }
 window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+
+document.addEventListener("backbutton", onBackKeyDown, false);
+function onBackKeyDown() {
+	if($(".firstScreen").css("display") != "flex") {
+		switchWindow("first");
+	} else {
+		navigator.app.exitApp();
+	}
+}
