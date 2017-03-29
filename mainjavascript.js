@@ -148,22 +148,22 @@ function centerQuestion() { //centrerar frågan med hjälp av padding
 	$(".secondScreen > div > div > div:last-child p span").css("padding" , padd);
 	$(".secondScreen > div > div > div:last-child p span").css("display", 'block');
 }
-function randomNumberBetweenZeroAnd(number){ //funktion som väljer ett slumpmässigt heltal mellan 0 och number
+function randomNumberBetweenZeroAnd(number){ // funktion som väljer ett slumpmässigt heltal mellan 0 och number
 	this.value = Math.round(Math.random() * number);
 	return this.value;
 }
 
 var personalMessage = [
-	["Otur.", "Har hört att ekonomi är ett bra program.", "0/10 3", "0/10 4"], // 0
-	["Bättre lycka nästa gång :)", "1/10 2", "1/10 3", "1/10 4"], //  1
-	["2/10 1", "2/10 2", "2/10 3", "2/10 4"], // 2
-	["3/10 1", "3/10 2", "3/10 3", "3/10 4"], // 3
-	["4/10 1", "4/10 2", "4/10 3", "4/10 4"], // 4
-	["5/10 1", "5/10 2", "5/10 3", "5/10 4"], // 5
-	["6/10 1", "6/10 2", "6/10 3", "6/10 4"], // 6
-	["Bättre än de flesta.", "7/10 2", "7/10 3", "7/10 4"], // 7
-	["Inte dåligt!", "8/10 2", "8/10 3", "8/10 4"], // 8
-	["Otroligt!!", "Imponerande, du passar perfekt på Teknikcollege.", "WOW!!", "9/10 4"], // 9
+	["Otur.", "Har hört att ekonomi är ett bra program."], // 0
+	["Bättre lycka nästa gång :)", "Du måste ha fått dem svåraste."], //  1
+	["Du kan bättre!"], // 2
+	["Försök igen, det här var bara uppvärmningen."], // 3
+	["Lite bättre kan du!"], // 4
+	["Helt okej."], // 5
+	["Teknikcollege är något för dig.", "Grymt!"], // 6
+	["Bättre än dem flesta.", "Dem klara du lätt! Du passar på Teknikcollege."], // 7
+	["Inte dåligt!", "Du är Teknikcollege material."], // 8
+	["Otroligt!!", "Imponerande, du passar perfekt på Teknikcollege.", "WOW!!", "utomordentligt!"], // 9
 	["Du är ett geni! Teknikcollege vill ha dig.", "Perfekt för Teknikcollege.", '"We got a badass over here."', "Grymt! Du ska gå på Teknikcollege."] // 10
 ];
 if(!localStorage.scoreboard) { // körs ifall det inte finns en scoreboard i localstorage
