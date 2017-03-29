@@ -22,7 +22,7 @@ $(".firstScreen h2:nth-of-type(1)").on("click", function() {
 $(".resultScreen h2:nth-of-type(1)").on("click", function(){
 	if($(".resultScreen h2").css("opacity") == "1"){
 		switchWindow("first");
-		$(".info, .socialMedia, .resultScreen h2").css("opacity", "0");
+		$(".info, .socialMedia, .resultScreen h2").removeClass("fadeIn");
 	}
 });
 $(".firstScreen h2:nth-of-type(2)").on("click", function() {
@@ -125,11 +125,11 @@ function importNewQuestion() {
 		$("#tspan4155").text(currentScore); //sätter poängen i stjärnan
 		$(".resultScreen h3").text(message); //visar ett meddelande
 		setTimeout(function(){ //animerar element när man kommer till resultat
-			$(".info").animate({opacity: "1"}, 800);
+			$(".info").addClass("fadeIn");
 			setTimeout(function(){
-				$(".socialMedia").animate({opacity: "1"}, 800);
+				$(".socialMedia").addClass("fadeIn");
 				setTimeout(function(){
-					$(".resultScreen h2").animate({opacity: "1"}, 800);
+					$(".resultScreen h2").addClass("fadeIn");
 				}, 500);
 			}, 300);
 		}, 300);
