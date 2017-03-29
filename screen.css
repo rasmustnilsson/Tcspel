@@ -36,7 +36,8 @@ html, body, .screen {
     justify-content: flex-end;
 }
 .secondScreen {
-	background-image: url("img/backgroundimg2.png");
+	background-image: none;
+	background-color: #f1f1f1;
 }
 .backDiv {
 	flex-grow: 1;
@@ -91,9 +92,9 @@ html, body, .screen {
 	flex-direction: column;
 	width: 100%;
 	max-width: 800px;
-	background-color: #f1f1f1;
 	padding: 0;
 	box-sizing: border-box;
+	opacity: 0;
 }
 .secondScreen > div > div > div:last-child p {
 	flex-grow: 1;
@@ -170,12 +171,26 @@ html, body, .screen {
 .info, .resultScreen h2 {
 	opacity: 0;
 }
-@keyframes fadeIn {
+@keyframes fadeIn1200 {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
 }
-.fadeIn {
-	animation: fadeIn 1s linear 0s 1 normal forwards;
+.fadeIn1200 {
+	animation: fadeIn1200 0.8s linear 0s 1 normal forwards;
+}
+@keyframes fadeIn800 {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+.fadeIn800 {
+	animation: fadeIn800 0.8s linear 0s 1 normal forwards;
+}
+@keyframes fadeIn400 {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+.fadeIn400 {
+	animation: fadeIn400 0.4s linear 0s 1 normal forwards;
 }
 .time {
 	color: #fff;
