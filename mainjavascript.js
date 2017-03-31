@@ -59,7 +59,7 @@ questions.question7 = new questionGenerator(["Om du går 1km söderut, 1km väst
 questions.question8 = new questionGenerator(["Vilken av figurerna A till D avslutar serien bäst?","A", "B", "C","D", "iqfraga.png", 4]);
 questions.question9 = new questionGenerator(["Två män gräver en grop på två dagar. Hur lång tid tar det då för en man att gräva en halv grop?","Går inte", "2 dagar", "1 dag", "digging.jpeg", 1]);
 questions.question10 = new questionGenerator(['Vem kan säga: "Du är min son, men jag är inte din far"?',"Ingen", "Pappa", "Farfar/Morfar", "Mamma", "familj.png", 4]);
-questions.question11 = new questionGenerator(['Vid ett möte skakar 10 personer hand med varandra. Hur många handskakningar blir det totalt?',"100", "44", "50", "90", "handshake.png", 4]);
+questions.question11 = new questionGenerator(['Vid ett möte skakar 10 personer hand med varandra. Hur många handskakningar blir det totalt?',"100", "45", "50", "90", "handshake.png", 2]);
 
 
 var questionsToUse = Object.keys(questions);
@@ -84,7 +84,7 @@ var counter = function(){
 }
 
 function importNewQuestion() {
-	if(Object.keys(questionsToUse).length > 0 && questionsToUsedCounter <= 11) { //Körs så länge det finns frågor att använda och man inte har nått maxgränsen på hur många frågor man vill ska komma
+	if(Object.keys(questionsToUse).length > 0 && questionsToUsedCounter <= 10) { //Körs så länge det finns frågor att använda och man inte har nått maxgränsen på hur många frågor man vill ska komma
 	var selectedQuestion = questions[newQuestion()];
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
