@@ -49,12 +49,12 @@ function questionGenerator(list) { // tar en lista med frågan först, sen svar,
 }
 
 // Första är en fråga, och sista är rättsvarsindex, och dem i mitten är frågor
-questions.question1 = new questionGenerator(["Vilket håll åker bussen?", "Höger", "Vänster", "Står still","buss.jpg", 2]);
+questions.question1 = new questionGenerator(["Om bussen rör sig framåt vilket håll åker den då?", "Höger", "Vänster", "Står still","buss.jpg", 2]);
 questions.question2 = new questionGenerator(["Det finns 10 fiskar i ett akvarium. 2 av dem sjönk. 3 av dem simmade iväg. 2 av dem dog. Hur många finns kvar?", "8", "10", "3", "5","akvarium.svg", 2]);
 questions.question3 = new questionGenerator(["Två personer sitter i en kanot, en paddlar åt väst och den andra åt ost. vilket håll åkte dem?", "Ingenstans", "Väst", "Ost","Teknikcollege.png", 2]);
-questions.question4 = new questionGenerator(["Vilket horisontellt sträck är längst?", "Övre", "Undre", "De är lika långa","strack.svg", 3]);
+questions.question4 = new questionGenerator(["Vilket horisontellt streck är längst?", "Övre", "Undre", "De är lika långa","strack.svg", 3]);
 questions.question5 = new questionGenerator(["Om fyra barn äter fyra godispåsar på fyra dagar, så äter femtiosju barn femtiosju godispåsar på ... dagar?", "57 dagar", "4 dagar", "10 dagar","child-575527.png", 2]);
-questions.question6 = new questionGenerator(["Vilket av dessa tre hus, A, B och C kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "B", "D", "C","hus.svg", 3]);
+questions.question6 = new questionGenerator(["Vilket av dessa tre hus, A, B och C kan man rita utan att lyfta pennan från pappret eller dra samma sträck två gånger?", "A", "B", "C","hus.svg", 3]);
 questions.question7 = new questionGenerator(["Om du går 1km söderut, 1km västerut, 1km norrut och kommer tillbaka till samma ställe var är du då?","Nordpolen", "Ekvatorn", "Kräftans vändkrets","earth.png", 1]);
 questions.question8 = new questionGenerator(["Vilken av figurerna A till D avslutar serien bäst?","A", "B", "C","D", "iqfraga.png", 4]);
 questions.question9 = new questionGenerator(["Två män gräver en grop på två dagar. Hur lång tid tar det då för en man att gräva en halv grop?","Går inte", "2 dagar", "1 dag", "digging.jpeg", 1]);
