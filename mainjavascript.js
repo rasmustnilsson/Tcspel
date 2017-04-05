@@ -88,10 +88,10 @@ function importNewQuestion() {
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
 		$(".secondScreen div div p span").text(selectedQuestion.question); //uppdaterar frågan
-		centerQuestion();
 		$(".secondScreen > div > div > div:last-child").addClass("fadeIn1200");
 		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).addClass("fadeIn1200");
 		for(i = 1; i < questionLength; i++) {
+			centerQuestion();
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
 			$(".questionDiv ul").append("<li><span class='nummer'>" + i + "</span></li>"); //lägger till en li
 			$(li).append(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
@@ -195,7 +195,7 @@ function addToScoreboard(score, time) { //lägger till score i scoreboard ifall 
 }
 function generateScoreboard() { //bygger scoreboarden i scoreboard-skärmen
 	$(".table").empty(); //tömmer scoreBoarden
-	$(".table").append("<div><span><span>Place</span></span><span><span>Score</span></span><span><span>Time</span></span></div>");
+	$(".table").append("<div><span><span>Place</span></span><span><span>Score</span></span><span><span>Time (s)</span></span></div>");
 	for(i = 0; i < 10; i++) { //skapar 10 scoreboard platser
 		$(".table").append("<div><span><span></span></span><span><span></span></span><span><span></span></span></div>");
 	}
