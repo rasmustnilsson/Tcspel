@@ -168,9 +168,6 @@ html, body, .screen {
 	justify-content: space-around;
 	background: linear-gradient(to right, rgba(212,228,239,0.5) 0%, rgba(134,174,204,0.5) 50%, rgba(212,228,239,0.5) 100%);
 }
-.info, .resultScreen h2 {
-	opacity: 0;
-}
 @keyframes fadeIn1200 {
 	0% {opacity: 0;}
 	100% {opacity: 1;}
@@ -278,7 +275,6 @@ html, body, .screen {
 .socialMedia {
 	display: inline-flex;
 	flex-direction: column;
-	opacity: 0;
 }
 .socialMedia div:first-of-type {
 	background-color: #3b5998;
