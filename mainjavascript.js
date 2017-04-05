@@ -88,15 +88,16 @@ function importNewQuestion() {
 		$(".questionDiv ul").empty(); //tömmer ulen från gamla svar
 		var questionLength = Object.keys(selectedQuestion).length - 2; //ger längden på objektet med frågorna i
 		$(".secondScreen div div p span").text(selectedQuestion.question); //uppdaterar frågan
-		$(".secondScreen > div > div > div:last-child").addClass("fadeIn1200");
-		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).addClass("fadeIn1200");
+		centerQuestion();
+		$(".secondScreen > div > div > div:last-child").addClass("fadeIn200");
+		$(".secondScreen .imagecontainer div").css({"opacity": '0', "background-image": 'url("img/' + selectedQuestion.img + '")'}).addClass("fadeIn200");
 		for(i = 1; i < questionLength; i++) {
 			centerQuestion();
 			var li = ".questionDiv ul li:nth-of-type(" + i + ")";
 			$(".questionDiv ul").append("<li><span class='nummer'>" + i + "</span></li>"); //lägger till en li
 			$(li).append(selectedQuestion["answer" + (i - 1)]); //ger li:n text från korrekt fråga
 			$(li).css("opacity", "0");
-			$(li).addClass("fadeIn1200");
+			$(li).addClass("fadeIn200");
 			$(li).on("click",function() { //onclick style
 				if(!clicked) {
 					clicked = true;
@@ -110,9 +111,12 @@ function importNewQuestion() {
 					$(".questionDiv ul li").delay(250).fadeOut(550);
 					$(".questionDiv ul li:nth-of-type(" + indexAbove + ")").addClass("border");
 					var newQuestionTimer = setTimeout(function() {
-						$(".secondScreen > div > div > div:last-child, .secondScreen .imagecontainer div").removeClass("fadeIn1200");
-						importNewQuestion();
-						clicked = false;
+						$(".fadeIn200").addClass("fadeOut200").removeClass("fadeIn200");
+						setTimeout(function(){
+							$(".fadeOut200").removeClass("fadeOut200");
+							importNewQuestion();
+							clicked = false;
+						}, 200);
 					}, 500);
 				}
 			});
