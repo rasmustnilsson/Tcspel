@@ -98,7 +98,7 @@ html, body, .screen {
 }
 .secondScreen > div > div > div:last-child p {
 	height: 1em;
-	padding: 0 16px;
+	padding: 0 16px 36px 16px;
 }
 .secondScreen > div > div > div:last-child p span {
 	font-family: Garamond, sans-serif;
